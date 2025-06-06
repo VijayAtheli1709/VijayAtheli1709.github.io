@@ -1,1268 +1,1610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijay Chandra Atheli | Strategic Analytics Consultant</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a5568;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .hero {
-            padding: 120px 0 80px;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            font-weight: 600;
-            margin: 0 0.5rem;
-        }
-
-        .cta-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 15px;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        /* Experience Timeline */
-        .experience-timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .job-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2d3748;
-        }
-
-        .company {
-            font-size: 1.2rem;
-            color: #667eea;
-            font-weight: 600;
-        }
-
-        .duration {
-            background: #e2e8f0;
-            color: #4a5568;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .achievements {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .achievements li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .achievements li:before {
-            content: "▶";
-            color: #667eea;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 4px solid #48bb78;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #2d3748;
-        }
-
-        .project-description {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .project-impact {
-            background: #f0fff4;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border-left: 3px solid #48bb78;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: #e2e8f0;
-            color: #4a5568;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .view-project {
-            margin-top: 1rem;
-            color: #48bb78;
-            font-weight: 600;
-            text-align: center;
-            padding: 0.5rem;
-            border: 2px solid #48bb78;
-            border-radius: 8px;
-            background: rgba(72, 187, 120, 0.1);
-        }
-
-        .project-card:hover .view-project {
-            background: #48bb78;
-            color: white;
-        }
-
-        /* Certifications Grid */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .certification-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border-top: 4px solid #00a1e0;
-            position: relative;
-        }
-
-        .certification-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .cert-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            overflow: hidden;
-            background: #f8f9fa;
-            border: 3px solid #00a1e0;
-        }
-
-        .cert-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .cert-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-date {
-            color: #667eea;
-            font-weight: 600;
-            background: #f0f4ff;
-            padding: 0.3rem 1rem;
-            border-radius: 15px;
-            display: inline-block;
-        }
-
-        .cert-level {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: #48bb78;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            border-top: 4px solid #667eea;
-        }
-
-        .skill-category h3 {
-            color: #2d3748;
-            margin-bottom: 1rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-item {
-            background: #667eea;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-link {
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            background: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 2% auto;
-            padding: 0;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 1200px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px 15px 0 0;
-            position: relative;
-        }
-
-        .close {
-            color: white;
-            float: right;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-        }
-
-        .close:hover {
-            opacity: 0.7;
-        }
-
-        .modal-body {
-            padding: 2rem;
-            line-height: 1.6;
-        }
-
-        .project-detail-section {
-            margin-bottom: 3rem;
-        }
-
-        .project-detail-section h3 {
-            color: #2d3748;
-            border-bottom: 2px solid #48bb78;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .eda-placeholder {
-            background: #f8f9fa;
-            border: 2px dashed #48bb78;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        .methodology-step {
-            background: #f0fff4;
-            border-left: 4px solid #48bb78;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .duration {
-                margin-top: 0.5rem;
-            }
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .section-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-            gap: 1rem;
-        }
-
-        .tab-button {
-            background: #e2e8f0;
-            color: #4a5568;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .tab-button.active {
-            background: #667eea;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vijay Chandra Atheli | Strategic Analytics Consultant</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+       body {
+           font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+           line-height: 1.6;
+           color: #ffffff;
+           background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 25%, #0f0f23 50%, #1a1a1a 75%, #000000 100%);
+           background-attachment: fixed;
+           min-height: 100vh;
+           overflow-x: hidden;
+       }
+
+       .container {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 0 20px;
+       }
+
+       .glass {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+       }
+
+       .glass-subtle {
+           background: rgba(255, 255, 255, 0.02);
+           backdrop-filter: blur(15px);
+           -webkit-backdrop-filter: blur(15px);
+           border: 1px solid rgba(255, 255, 255, 0.05);
+           border-radius: 15px;
+       }
+
+       .header {
+           position: fixed;
+           top: 0;
+           width: 100%;
+           z-index: 1000;
+           padding: 1rem 0;
+           background: rgba(0, 0, 0, 0.4);
+           backdrop-filter: blur(25px);
+           -webkit-backdrop-filter: blur(25px);
+           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+       }
+
+       .nav {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
+
+       .logo {
+           font-size: 1.5rem;
+           font-weight: 700;
+           color: #ffffff;
+           text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+       }
+
+       .nav-links {
+           display: flex;
+           list-style: none;
+           gap: 2rem;
+       }
+
+       .nav-links a {
+           text-decoration: none;
+           color: rgba(255, 255, 255, 0.8);
+           font-weight: 500;
+           transition: all 0.3s ease;
+           position: relative;
+       }
+
+       .nav-links a:hover {
+           color: #ffffff;
+           text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+       }
+
+       .nav-links a::after {
+           content: '';
+           position: absolute;
+           bottom: -5px;
+           left: 0;
+           width: 0;
+           height: 2px;
+           background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+           transition: width 0.3s ease;
+       }
+
+       .nav-links a:hover::after {
+           width: 100%;
+       }
+
+       .hero {
+           padding: 140px 0 100px;
+           text-align: center;
+           background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+       }
+
+       .hero h1 {
+           font-size: 4rem;
+           margin-bottom: 1.5rem;
+           font-weight: 800;
+           background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+           text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+       }
+
+       .hero p {
+           font-size: 1.4rem;
+           margin-bottom: 3rem;
+           color: rgba(255, 255, 255, 0.8);
+       }
+
+       .cta-button {
+           display: inline-block;
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(15px);
+           -webkit-backdrop-filter: blur(15px);
+           color: white;
+           padding: 18px 36px;
+           text-decoration: none;
+           border-radius: 50px;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           transition: all 0.4s ease;
+           font-weight: 600;
+           margin: 0 0.8rem;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .cta-button::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: -100%;
+           width: 100%;
+           height: 100%;
+           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+           transition: left 0.6s ease;
+       }
+
+       .cta-button:hover::before {
+           left: 100%;
+       }
+
+       .cta-button:hover {
+           background: rgba(255, 255, 255, 0.1);
+           border-color: rgba(255, 255, 255, 0.3);
+           transform: translateY(-3px);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+       }
+
+       .section {
+           padding: 100px 0;
+           position: relative;
+       }
+
+       .section::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 50%;
+           transform: translateX(-50%);
+           width: 80%;
+           height: 1px;
+           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+       }
+
+       .section-title {
+           text-align: center;
+           font-size: 3rem;
+           margin-bottom: 4rem;
+           font-weight: 700;
+           background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+       }
+
+       .about-grid {
+           display: grid;
+           grid-template-columns: 1fr 2fr;
+           gap: 5rem;
+           align-items: center;
+       }
+
+       .about-text {
+           font-size: 1.1rem;
+           line-height: 1.8;
+           color: rgba(255, 255, 255, 0.9);
+       }
+
+       .stats {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 2rem;
+           margin-top: 3rem;
+       }
+
+       .stat-card {
+           text-align: center;
+           padding: 3rem 2rem;
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           transition: all 0.4s ease;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .stat-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 2px;
+           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+       }
+
+       .stat-card:hover {
+           transform: translateY(-8px);
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.2);
+           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+       }
+
+       .stat-number {
+           font-size: 3rem;
+           font-weight: 800;
+           display: block;
+           color: #ffffff;
+           text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+       }
+
+       /* Experience Timeline */
+       .experience-timeline {
+           position: relative;
+           max-width: 1000px;
+           margin: 0 auto;
+       }
+
+       .timeline-item {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           padding: 3rem;
+           margin: 3rem 0;
+           transition: all 0.4s ease;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .timeline-item::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 4px;
+           height: 100%;
+           background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+       }
+
+       .timeline-item:hover {
+           transform: translateY(-5px);
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.2);
+           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+       }
+
+       .experience-header {
+           display: flex;
+           justify-content: space-between;
+           align-items: flex-start;
+           margin-bottom: 1.5rem;
+       }
+
+       .job-title {
+           font-size: 1.6rem;
+           font-weight: 700;
+           color: #ffffff;
+           margin-bottom: 0.5rem;
+       }
+
+       .company {
+           font-size: 1.3rem;
+           color: rgba(255, 255, 255, 0.8);
+           font-weight: 600;
+       }
+
+       .duration {
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           color: rgba(255, 255, 255, 0.9);
+           padding: 0.8rem 1.5rem;
+           border-radius: 25px;
+           font-size: 0.9rem;
+           font-weight: 600;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
+
+       .achievements {
+           list-style: none;
+           margin-top: 1.5rem;
+       }
+
+       .achievements li {
+           margin: 1rem 0;
+           padding-left: 2rem;
+           position: relative;
+           color: rgba(255, 255, 255, 0.85);
+           line-height: 1.6;
+       }
+
+       .achievements li:before {
+           content: "▶";
+           color: rgba(255, 255, 255, 0.6);
+           position: absolute;
+           left: 0;
+           top: 0;
+       }
+
+       /* Projects Grid */
+       .projects-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+           gap: 2.5rem;
+           margin-top: 4rem;
+       }
+
+       .project-card {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           padding: 3rem;
+           transition: all 0.4s ease;
+           cursor: pointer;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .project-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 3px;
+           background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+       }
+
+       .project-card:hover {
+           transform: translateY(-8px);
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.2);
+           box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+       }
+
+       .project-title {
+           font-size: 1.5rem;
+           font-weight: 700;
+           margin-bottom: 1.5rem;
+           color: #ffffff;
+       }
+
+       .project-description {
+           margin-bottom: 1.5rem;
+           line-height: 1.7;
+           color: rgba(255, 255, 255, 0.8);
+       }
+
+       .project-impact {
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(10px);
+           padding: 1.5rem;
+           border-radius: 12px;
+           margin: 1.5rem 0;
+           border-left: 3px solid rgba(255, 255, 255, 0.4);
+           color: rgba(255, 255, 255, 0.9);
+       }
+
+       .project-tags {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 0.8rem;
+           margin-top: 1.5rem;
+       }
+
+       .tag {
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           color: rgba(255, 255, 255, 0.9);
+           padding: 0.5rem 1rem;
+           border-radius: 20px;
+           font-size: 0.9rem;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           transition: all 0.3s ease;
+       }
+
+       .tag:hover {
+           background: rgba(255, 255, 255, 0.15);
+           transform: translateY(-2px);
+       }
+
+       .view-project {
+           margin-top: 2rem;
+           color: rgba(255, 255, 255, 0.8);
+           font-weight: 600;
+           text-align: center;
+           padding: 1rem;
+           border: 2px solid rgba(255, 255, 255, 0.2);
+           border-radius: 12px;
+           background: rgba(255, 255, 255, 0.02);
+           backdrop-filter: blur(10px);
+           transition: all 0.3s ease;
+       }
+
+       .project-card:hover .view-project {
+           background: rgba(255, 255, 255, 0.1);
+           color: #ffffff;
+           border-color: rgba(255, 255, 255, 0.4);
+       }
+
+       /* Certifications Grid */
+       .certifications-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 2.5rem;
+           margin-top: 4rem;
+       }
+
+       .certification-card {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           padding: 3rem 2rem;
+           text-align: center;
+           transition: all 0.4s ease;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .certification-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 3px;
+           background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+       }
+
+       .certification-card:hover {
+           transform: translateY(-8px);
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.2);
+           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+       }
+
+       .cert-logo {
+           width: 90px;
+           height: 90px;
+           margin: 0 auto 2rem;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           border-radius: 50%;
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(15px);
+           border: 2px solid rgba(255, 255, 255, 0.2);
+           transition: all 0.3s ease;
+       }
+
+       .cert-logo:hover {
+           transform: scale(1.1);
+           background: rgba(255, 255, 255, 0.1);
+           border-color: rgba(255, 255, 255, 0.4);
+       }
+
+       .cert-logo img {
+           width: 80%;
+           height: 80%;
+           object-fit: contain;
+           border-radius: 50%;
+       }
+
+       .cert-name {
+           font-size: 1.3rem;
+           font-weight: 700;
+           color: #ffffff;
+           margin-bottom: 1rem;
+       }
+
+       .cert-date {
+           color: rgba(255, 255, 255, 0.7);
+           font-weight: 600;
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(10px);
+           padding: 0.5rem 1.2rem;
+           border-radius: 20px;
+           display: inline-block;
+           border: 1px solid rgba(255, 255, 255, 0.1);
+       }
+
+       .cert-level {
+           position: absolute;
+           top: 1.5rem;
+           right: 1.5rem;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           color: rgba(255, 255, 255, 0.9);
+           padding: 0.4rem 1rem;
+           border-radius: 15px;
+           font-size: 0.8rem;
+           font-weight: 700;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
+
+       .skills-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+           gap: 2.5rem;
+           margin-top: 4rem;
+       }
+
+       .skill-category {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 20px;
+           padding: 3rem;
+           transition: all 0.4s ease;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .skill-category::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 3px;
+           background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+       }
+
+       .skill-category:hover {
+           transform: translateY(-5px);
+           background: rgba(255, 255, 255, 0.05);
+           border-color: rgba(255, 255, 255, 0.2);
+           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+       }
+
+       .skill-category h3 {
+           color: #ffffff;
+           margin-bottom: 2rem;
+           font-size: 1.4rem;
+           font-weight: 700;
+       }
+
+       .skill-list {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 1rem;
+       }
+
+       .skill-item {
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           color: rgba(255, 255, 255, 0.9);
+           padding: 0.8rem 1.5rem;
+           border-radius: 25px;
+           font-size: 0.9rem;
+           font-weight: 600;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           transition: all 0.3s ease;
+       }
+
+       .skill-item:hover {
+           background: rgba(255, 255, 255, 0.15);
+           transform: translateY(-2px);
+           color: #ffffff;
+       }
+
+       .contact {
+           background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+           text-align: center;
+           padding: 100px 0;
+           position: relative;
+       }
+
+       .contact::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+           pointer-events: none;
+       }
+
+       .contact h2 {
+           font-size: 3rem;
+           margin-bottom: 1.5rem;
+           font-weight: 700;
+           background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+       }
+
+       .contact p {
+           font-size: 1.2rem;
+           color: rgba(255, 255, 255, 0.8);
+           margin-bottom: 3rem;
+       }
+
+       .contact-links {
+           display: flex;
+           justify-content: center;
+           gap: 2rem;
+           margin-top: 3rem;
+       }
+
+       .contact-link {
+           color: rgba(255, 255, 255, 0.9);
+           text-decoration: none;
+           padding: 18px 32px;
+           border: 2px solid rgba(255, 255, 255, 0.2);
+           border-radius: 50px;
+           transition: all 0.4s ease;
+           font-weight: 600;
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(15px);
+           -webkit-backdrop-filter: blur(15px);
+       }
+
+       .contact-link:hover {
+           background: rgba(255, 255, 255, 0.1);
+           border-color: rgba(255, 255, 255, 0.4);
+           transform: translateY(-3px);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+           color: #ffffff;
+       }
+
+       .footer {
+           background: rgba(0, 0, 0, 0.6);
+           backdrop-filter: blur(20px);
+           -webkit-backdrop-filter: blur(20px);
+           border-top: 1px solid rgba(255, 255, 255, 0.1);
+           color: rgba(255, 255, 255, 0.7);
+           text-align: center;
+           padding: 3rem 0;
+       }
+
+       /* Modal Styles */
+       .modal {
+           display: none;
+           position: fixed;
+           z-index: 2000;
+           left: 0;
+           top: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.9);
+           backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+       }
+
+       .modal-content {
+           background: rgba(0, 0, 0, 0.8);
+           backdrop-filter: blur(25px);
+           -webkit-backdrop-filter: blur(25px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           margin: 2% auto;
+           padding: 0;
+           border-radius: 20px;
+           width: 90%;
+           max-width: 1200px;
+           max-height: 90vh;
+           overflow-y: auto;
+           position: relative;
+       }
+
+       .modal-header {
+           background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+           backdrop-filter: blur(20px);
+           color: white;
+           padding: 3rem;
+           border-radius: 20px 20px 0 0;
+           position: relative;
+           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+       }
+
+       .close {
+           color: rgba(255, 255, 255, 0.8);
+           float: right;
+           font-size: 2.5rem;
+           font-weight: bold;
+           cursor: pointer;
+           position: absolute;
+           top: 2rem;
+           right: 2.5rem;
+           transition: all 0.3s ease;
+       }
+
+       .close:hover {
+           color: #ffffff;
+           transform: scale(1.1);
+       }
+
+       .modal-body {
+           padding: 3rem;
+           line-height: 1.7;
+           color: rgba(255, 255, 255, 0.9);
+       }
+
+       .project-detail-section {
+           margin-bottom: 3rem;
+       }
+
+       .project-detail-section h3 {
+           color: #ffffff;
+           border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+           padding-bottom: 1rem;
+           margin-bottom: 1.5rem;
+           font-size: 1.4rem;
+       }
+
+       .eda-placeholder {
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(15px);
+           border: 2px dashed rgba(255, 255, 255, 0.2);
+           border-radius: 15px;
+           padding: 2.5rem;
+           text-align: center;
+           margin: 2rem 0;
+           color: rgba(255, 255, 255, 0.8);
+       }
+
+       .methodology-step {
+           background: rgba(255, 255, 255, 0.05);
+           backdrop-filter: blur(10px);
+           border-left: 4px solid rgba(255, 255, 255, 0.4);
+           padding: 1.5rem;
+           margin: 1.5rem 0;
+           border-radius: 0 15px 15px 0;
+           color: rgba(255, 255, 255, 0.9);
+       }
+
+       @media (max-width: 768px) {
+           .nav-links {
+               display: none;
+           }
+           
+           .hero h1 {
+               font-size: 2.5rem;
+           }
+           
+           .about-grid {
+               grid-template-columns: 1fr;
+               gap: 3rem;
+           }
+           
+           .projects-grid {
+               grid-template-columns: 1fr;
+           }
+           
+           .contact-links {
+               flex-direction: column;
+               align-items: center;
+               gap: 1rem;
+           }
+
+           .experience-header {
+               flex-direction: column;
+               align-items: flex-start;
+           }
+
+           .duration {
+               margin-top: 1rem;
+           }
+
+           .section {
+               padding: 60px 0;
+           }
+
+           .section-title {
+               font-size: 2.2rem;
+           }
+       }
+
+       .highlight {
+           background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+           padding: 0.3rem 0.6rem;
+           border-radius: 8px;
+           font-weight: 700;
+           color: #ffffff;
+           backdrop-filter: blur(10px);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
+
+       /* Floating particles effect */
+       .hero::after {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background-image: 
+               radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+               radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+               radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+           background-size: 300px 300px, 250px 250px, 400px 400px;
+           animation: float 20s ease-in-out infinite;
+           pointer-events: none;
+       }
+
+       @keyframes float {
+           0%, 100% { transform: translateY(0px); }
+           50% { transform: translateY(-20px); }
+       }
+
+       /* Certification highlights */
+       .cert-highlights {
+           text-align: center;
+           margin-top: 4rem;
+           padding: 3rem;
+           background: rgba(255, 255, 255, 0.02);
+           backdrop-filter: blur(20px);
+           border-radius: 20px;
+           border: 1px solid rgba(255, 255, 255, 0.1);
+       }
+
+       .cert-highlights h3 {
+           color: #ffffff;
+           margin-bottom: 2rem;
+           font-size: 1.8rem;
+       }
+
+       .cert-stats {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 2rem;
+           margin-top: 2rem;
+       }
+
+       .cert-stat {
+           text-align: center;
+       }
+
+       .cert-stat-number {
+           font-size: 2.5rem;
+           color: #ffffff;
+           font-weight: 800;
+           text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+       }
+
+       .cert-stat-label {
+           color: rgba(255, 255, 255, 0.7);
+           font-size: 1rem;
+           margin-top: 0.5rem;
+       }
+   </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <div class="logo">Vijay Chandra Atheli</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+   <header class="header">
+       <nav class="nav container">
+           <div class="logo">Vijay Chandra Atheli</div>
+           <ul class="nav-links">
+               <li><a href="#about">About</a></li>
+               <li><a href="#experience">Experience</a></li>
+               <li><a href="#projects">Projects</a></li>
+               <li><a href="#certifications">Certifications</a></li>
+               <li><a href="#skills">Skills</a></li>
+               <li><a href="#contact">Contact</a></li>
+           </ul>
+       </nav>
+   </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Strategic Analytics Consultant</h1>
-            <p>Transforming complex data into actionable business strategies • Salesforce Expert • 10 Active Certifications</p>
-            <a href="#experience" class="cta-button">View Experience</a>
-            <a href="#projects" class="cta-button">See Projects</a>
-        </div>
-    </section>
+   <section class="hero">
+       <div class="container">
+           <h1>Strategic Analytics Consultant</h1>
+           <p>Transforming complex data into actionable business strategies • Salesforce Expert • 10 Active Certifications</p>
+           <a href="#experience" class="cta-button">View Experience</a>
+           <a href="#projects" class="cta-button">See Projects</a>
+       </div>
+   </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div style="text-align: center;">
-                    <div class="profile-photo">
-                        <img src="assets/profile-photo.jpg" alt="Vijay Chandra Atheli" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 5px solid #667eea; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                    </div>
-                    <div class="stats">
-                        <div class="stat-card">
-                            <span class="stat-number">3+</span>
-                            <span>Years at Deloitte</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">10</span>
-                            <span>Salesforce Certifications</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">20%</span>
-                            <span>Performance Optimization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>I'm a <span class="highlight">strategic analytics consultant</span> with deep expertise in transforming complex business challenges into data-driven solutions. My experience spans from engineering Salesforce CRM optimizations at Deloitte to developing predictive models that drive strategic decision-making.</p>
-                    
-                    <p>Currently pursuing my MS in Business Analytics at Northeastern University, I bridge the gap between technical excellence and business strategy. My recent work at Risepoint involves comprehensive strategy analysis for EdTech innovation, while my background includes driving operational efficiency improvements and revenue optimization across multiple industries.</p>
-                    
-                    <p>As a <span class="highlight">certified Salesforce expert</span> with 10 active certifications including specialized credentials in Financial Services and AI, I specialize in digital transformation consulting, combining advanced analytics with strategic business thinking to deliver measurable impact for Fortune 500 clients.</p>
-                    
-                    <div style="margin-top: 2rem;">
-                        <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="cta-button" style="background: #667eea; color: white; margin-right: 1rem;" download>📄 Download Resume</a>
-                        <a href="mailto:atheli.v@northeastern.edu" class="cta-button" style="background: #48bb78; color: white;">📧 Contact Me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section id="about" class="section">
+       <div class="container">
+           <h2 class="section-title">About Me</h2>
+           <div class="about-grid">
+               <div style="text-align: center;">
+                   <div class="profile-photo">
+                       <img src="assets/profile-photo.jpg" alt="Vijay Chandra Atheli" style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255, 255, 255, 0.2); margin-bottom: 3rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px);">
+                   </div>
+                   <div class="stats">
+                       <div class="stat-card">
+                           <span class="stat-number">3+</span>
+                           <span style="color: rgba(255, 255, 255, 0.8);">Years at Deloitte</span>
+                       </div>
+                       <div class="stat-card">
+                           <span class="stat-number">10</span>
+                           <span style="color: rgba(255, 255, 255, 0.8);">Salesforce Certifications</span>
+                       </div>
+                       <div class="stat-card">
+                           <span class="stat-number">20%</span>
+                           <span style="color: rgba(255, 255, 255, 0.8);">Performance Optimization</span>
+                       </div>
+                   </div>
+               </div>
+               <div class="about-text">
+                   <p>I'm a <span class="highlight">strategic analytics consultant</span> with deep expertise in transforming complex business challenges into data-driven solutions. My experience spans from engineering Salesforce CRM optimizations at Deloitte to developing predictive models that drive strategic decision-making.</p>
+                   
+                   <p>Currently pursuing my MS in Business Analytics at Northeastern University, I bridge the gap between technical excellence and business strategy. My recent work at Risepoint involves comprehensive strategy analysis for EdTech innovation, while my background includes driving operational efficiency improvements and revenue optimization across multiple industries.</p>
+                   
+                   <p>As a <span class="highlight">certified Salesforce expert</span> with 10 active certifications including specialized credentials in Financial Services and AI, I specialize in digital transformation consulting, combining advanced analytics with strategic business thinking to deliver measurable impact for Fortune 500 clients.</p>
+                   
+                   <div style="margin-top: 3rem;">
+                       <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="cta-button" download>📄 Download Resume</a>
+                       <a href="mailto:atheli.v@northeastern.edu" class="cta-button">📧 Contact Me</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                
-                <div class="timeline-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="job-title">Marketing & Operations Intern</div>
-                            <div class="company">🚀 Risepoint (EdTech Startup)</div>
-                        </div>
-                        <div class="duration">Jun 2025 - Present</div>
-                    </div>
-                    <p><strong>Strategic Consulting Role:</strong> Leading comprehensive strategy analysis for an innovative EdTech company committed to making quality education more accessible.</p>
-                    <ul class="achievements">
-                        <li>Conducting in-depth analysis to shape key strategic initiatives, utilizing data-driven insights from customer performance to internal operations</li>
-                        <li>Structuring complex problems, developing hypotheses, and delivering value-added strategic recommendations to drive business growth and operational efficiency</li>
-                        <li>Collaborating with cross-functional teams (Marketing, Operations, Product, Revenue, Enrollment Services) to gather and analyze data, identify KPIs, and provide insights on performance trends, risks, and opportunities</li>
-                        <li>Supporting development and implementation of business transformation initiatives, including process reengineering and change management strategies</li>
-                        <li>Cultivating deep understanding of Risepoint's processes, systems/tools, and broader market ecosystem including university partners and marketing channels</li>
-                    </ul>
-                </div>
+   <section id="experience" class="section">
+       <div class="container">
+           <h2 class="section-title">Professional Experience</h2>
+           <div class="experience-timeline">
+               
+               <div class="timeline-item">
+                   <div class="experience-header">
+                       <div>
+                           <div class="job-title">Marketing & Operations Intern</div>
+                           <div class="company">🚀 Risepoint (EdTech Startup)</div>
+                       </div>
+                       <div class="duration">Jun 2025 - Present</div>
+                   </div>
+                   <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;"><strong>Strategic Consulting Role:</strong> Leading comprehensive strategy analysis for an innovative EdTech company committed to making quality education more accessible.</p>
+                   <ul class="achievements">
+                       <li>Conducting in-depth analysis to shape key strategic initiatives, utilizing data-driven insights from customer performance to internal operations</li>
+                       <li>Structuring complex problems, developing hypotheses, and delivering value-added strategic recommendations to drive business growth and operational efficiency</li>
+                       <li>Collaborating with cross-functional teams (Marketing, Operations, Product, Revenue, Enrollment Services) to gather and analyze data, identify KPIs, and provide insights on performance trends, risks, and opportunities</li>
+                       <li>Supporting development and implementation of business transformation initiatives, including process reengineering and change management strategies</li>
+                       <li>Cultivating deep understanding of Risepoint's processes, systems/tools, and broader market ecosystem including university partners and marketing channels</li>
+                   </ul>
+               </div>
 
-                <div class="timeline-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="job-title">Analytics Intern</div>
-                            <div class="company">🎯 FourBlock - Veteran Career Readiness</div>
-                        </div>
-                        <div class="duration">Jan 2025 - Apr 2025</div>
-                    </div>
-                    <p><strong>Impact Analytics & Strategy:</strong> Conducted strategic analysis for veteran career readiness organization to evaluate firm effectiveness and develop growth strategies.</p>
-                    <ul class="achievements">
-                        <li>Analyzed 5 years of alumni and donations data to evaluate organizational impact and effectiveness, identifying key performance indicators</li>
-                        <li>Utilized SQL, Python, and Tableau to extract, validate, and analyze Cloud data; applied unsupervised machine learning techniques for KPI detection</li>
-                        <li>Wrangled time-series data to remodel and visualize key metrics, enabling data-driven decision making</li>
-                        <li>Presented strategic recommendations to firm leadership, delivering executive summary outlining value proposition and strategy to engage donors and increase veteran enrollment by 25%</li>
-                    </ul>
-                </div>
+               <div class="timeline-item">
+                   <div class="experience-header">
+                       <div>
+                           <div class="job-title">Analytics Intern</div>
+                           <div class="company">🎯 FourBlock - Veteran Career Readiness</div>
+                       </div>
+                       <div class="duration">Jan 2025 - Apr 2025</div>
+                   </div>
+                   <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;"><strong>Impact Analytics & Strategy:</strong> Conducted strategic analysis for veteran career readiness organization to evaluate firm effectiveness and develop growth strategies.</p>
+                   <ul class="achievements">
+                       <li>Analyzed 5 years of alumni and donations data to evaluate organizational impact and effectiveness, identifying key performance indicators</li>
+                       <li>Utilized SQL, Python, and Tableau to extract, validate, and analyze Cloud data; applied unsupervised machine learning techniques for KPI detection</li>
+                       <li>Wrangled time-series data to remodel and visualize key metrics, enabling data-driven decision making</li>
+                       <li>Presented strategic recommendations to firm leadership, delivering executive summary outlining value proposition and strategy to engage donors and increase veteran enrollment by 25%</li>
+                   </ul>
+               </div>
 
-                <div class="timeline-item">
-                    <div class="experience-header">
-                        <div>
-                            <div class="job-title">Business Analyst</div>
-                            <div class="company">⚡ Deloitte Consulting USI</div>
-                        </div>
-                        <div class="duration">2021 - 2024</div>
-                    </div>
-                    <p><strong>Digital Transformation Consulting:</strong> Delivered comprehensive Salesforce CRM solutions to optimize sales operations and enable data-driven decision-making for major US Insurance client.</p>
-                    <ul class="achievements">
-                        <li>Engineered and optimized code frameworks applying advanced query optimization techniques, resulting in 20% reduction in SQL counts for asynchronous transactions and 10% reduction in synchronous transactions</li>
-                        <li>Automated Sales Planning from Excel to Salesforce using Flows, LWC, and Batch Apex, driving efficiency gains by reducing user time by 40+ hours weekly and enabling real-time data access</li>
-                        <li>Developed and delivered end-to-end Salesforce CRM solutions, redefining workflows, improving system performance, and enabling data-driven decision-making</li>
-                        <li>Led business-centric model implementations, improving transaction processing time and overall system efficiency</li>
-                        <li><strong>Recognition:</strong> Deloitte's Applause Award (Oct 2022), Spot Awards (May 2023, Dec 2023, May 2024)</li>
-                    </ul>
-                </div>
+               <div class="timeline-item">
+                   <div class="experience-header">
+                       <div>
+                           <div class="job-title">Business Analyst</div>
+                           <div class="company">⚡ Deloitte Consulting USI</div>
+                       </div>
+                       <div class="duration">2021 - 2024</div>
+                   </div>
+                   <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;"><strong>Digital Transformation Consulting:</strong> Delivered comprehensive Salesforce CRM solutions to optimize sales operations and enable data-driven decision-making for major US Insurance client.</p>
+                   <ul class="achievements">
+                       <li>Engineered and optimized code frameworks applying advanced query optimization techniques, resulting in 20% reduction in SQL counts for asynchronous transactions and 10% reduction in synchronous transactions</li>
+                       <li>Automated Sales Planning from Excel to Salesforce using Flows, LWC, and Batch Apex, driving efficiency gains by reducing user time by 40+ hours weekly and enabling real-time data access</li>
+                       <li>Developed and delivered end-to-end Salesforce CRM solutions, redefining workflows, improving system performance, and enabling data-driven decision-making</li>
+                       <li>Led business-centric model implementations, improving transaction processing time and overall system efficiency</li>
+                       <li><strong style="color: rgba(255, 255, 255, 0.9);">Recognition:</strong> Deloitte's Applause Award (Oct 2022), Spot Awards (May 2023, Dec 2023, May 2024)</li>
+                   </ul>
+               </div>
 
-            </div>
-        </div>
-    </section>
+           </div>
+       </div>
+   </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Individual Projects Portfolio</h2>
-            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #4a5568;">
-                Demonstrating analytical expertise through hands-on projects spanning machine learning, market analysis, and business intelligence
-            </p>
-            <div class="projects-grid">
-                
-                <div class="project-card" onclick="openProject('car-prediction')">
-                    <h3 class="project-title">🚗 Multi-Brand ML Prediction Engine</h3>
-                    <p class="project-description">Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.</p>
-                    <div class="project-impact">
-                        <strong>Technical Achievement:</strong> Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Regression Models</span>
-                        <span class="tag">Web Development</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+   <section id="projects" class="section">
+       <div class="container">
+           <h2 class="section-title">Individual Projects Portfolio</h2>
+           <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">
+               Demonstrating analytical expertise through hands-on projects spanning machine learning, market analysis, and business intelligence
+           </p>
+           <div class="projects-grid">
+               
+               <div class="project-card" onclick="openProject('car-prediction')">
+                   <h3 class="project-title">🚗 Multi-Brand ML Prediction Engine</h3>
+                   <p class="project-description">Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.</p>
+                   <div class="project-impact">
+                       <strong>Technical Achievement:</strong> Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Machine Learning</span>
+                       <span class="tag">Python</span>
+                       <span class="tag">Regression Models</span>
+                       <span class="tag">Web Development</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('rental-analytics')">
-                    <h3 class="project-title">🏠 Short-Term Rental Market Analytics</h3>
-                    <p class="project-description">Comprehensive analysis of rental market dynamics using sentiment analysis, geospatial mapping, and predictive modeling for strategic insights.</p>
-                    <div class="project-impact">
-                        <strong>Business Impact:</strong> Delivered dynamic dashboard with key insights on occupancy patterns, host trust factors, and profitability strategies.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Market Analysis</span>
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Sentiment Analysis</span>
-                        <span class="tag">Geospatial Analysis</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('rental-analytics')">
+                   <h3 class="project-title">🏠 Short-Term Rental Market Analytics</h3>
+                   <p class="project-description">Comprehensive analysis of rental market dynamics using sentiment analysis, geospatial mapping, and predictive modeling for strategic insights.</p>
+                   <div class="project-impact">
+                       <strong>Business Impact:</strong> Delivered dynamic dashboard with key insights on occupancy patterns, host trust factors, and profitability strategies.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Market Analysis</span>
+                       <span class="tag">Tableau</span>
+                       <span class="tag">Sentiment Analysis</span>
+                       <span class="tag">Geospatial Analysis</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('sales-forecasting')">
-                    <h3 class="project-title">📈 Sales Forecasting & Revenue Modeling</h3>
-                    <p class="project-description">Built multiple regression models to quantify impact of live music events and weather patterns on daily revenue at Ledge Brewing Co.</p>
-                    <div class="project-impact">
-                        <strong>Strategic Outcome:</strong> Delivered actionable insights for weather-informed promotions and optimized music scheduling to maximize weekend revenue.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Revenue Optimization</span>
-                        <span class="tag">Predictive Modeling</span>
-                        <span class="tag">API Integration</span>
-                        <span class="tag">Business Strategy</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('sales-forecasting')">
+                   <h3 class="project-title">📈 Sales Forecasting & Revenue Modeling</h3>
+                   <p class="project-description">Built multiple regression models to quantify impact of live music events and weather patterns on daily revenue at Ledge Brewing Co.</p>
+                   <div class="project-impact">
+                       <strong>Strategic Outcome:</strong> Delivered actionable insights for weather-informed promotions and optimized music scheduling to maximize weekend revenue.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Revenue Optimization</span>
+                       <span class="tag">Predictive Modeling</span>
+                       <span class="tag">API Integration</span>
+                       <span class="tag">Business Strategy</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('retail-analytics')">
-                    <h3 class="project-title">🛍️ Retail Analytics & Business Insights</h3>
-                    <p class="project-description">Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Customer Analytics</span>
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Linear Programming</span>
-                        <span class="tag">EDA</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('retail-analytics')">
+                   <h3 class="project-title">🛍️ Retail Analytics & Business Insights</h3>
+                   <p class="project-description">Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.</p>
+                   <div class="project-impact">
+                       <strong>Business Value:</strong> Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Customer Analytics</span>
+                       <span class="tag">PowerBI</span>
+                       <span class="tag">Linear Programming</span>
+                       <span class="tag">EDA</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('housing-impact')">
-                    <h3 class="project-title">🎓 Boston Housing Market Analysis</h3>
-                    <p class="project-description">Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.</p>
-                    <div class="project-impact">
-                        <strong>Research Impact:</strong> Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Market Research</span>
-                        <span class="tag">Statistical Modeling</span>
-                        <span class="tag">VIF Analysis</span>
-                        <span class="tag">Data Visualization</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('housing-impact')">
+                   <h3 class="project-title">🎓 Boston Housing Market Analysis</h3>
+                   <p class="project-description">Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.</p>
+                   <div class="project-impact">
+                       <strong>Research Impact:</strong> Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Market Research</span>
+                       <span class="tag">Statistical Modeling</span>
+                       <span class="tag">VIF Analysis</span>
+                       <span class="tag">Data Visualization</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('healthcare-risk')">
-                    <h3 class="project-title">⚕️ Healthcare Risk Assessment</h3>
-                    <p class="project-description">Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.</p>
-                    <div class="project-impact">
-                        <strong>Clinical Impact:</strong> Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Healthcare Analytics</span>
-                        <span class="tag">Risk Modeling</span>
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Feature Engineering</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('healthcare-risk')">
+                   <h3 class="project-title">⚕️ Healthcare Risk Assessment</h3>
+                   <p class="project-description">Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.</p>
+                   <div class="project-impact">
+                       <strong>Clinical Impact:</strong> Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Healthcare Analytics</span>
+                       <span class="tag">Risk Modeling</span>
+                       <span class="tag">XGBoost</span>
+                       <span class="tag">Feature Engineering</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('sports-analytics')">
-                    <h3 class="project-title">⚽ Player Performance Prediction</h3>
-                    <p class="project-description">Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.</p>
-                    <div class="project-impact">
-                        <strong>Sports Intelligence:</strong> Developed interactive Tableau dashboards enabling coaches and analysts to make data-driven decisions for player evaluation and game strategy.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Sports Analytics</span>
-                        <span class="tag">Performance Prediction</span>
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Random Forest</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('sports-analytics')">
+                   <h3 class="project-title">⚽ Player Performance Prediction</h3>
+                   <p class="project-description">Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.</p>
+                   <div class="project-impact">
+                       <strong>Sports Intelligence:</strong> Developed interactive Tableau dashboards enabling coaches and analysts to make data-driven decisions for player evaluation and game strategy.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Sports Analytics</span>
+                       <span class="tag">Performance Prediction</span>
+                       <span class="tag">Tableau</span>
+                       <span class="tag">Random Forest</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-                <div class="project-card" onclick="openProject('database-design')">
-                    <h3 class="project-title">🗄️ Database Design & Integration</h3>
-                    <p class="project-description">Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.</p>
-                    <div class="project-impact">
-                        <strong>System Impact:</strong> Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Database Design</span>
-                        <span class="tag">Google AppSheet</span>
-                        <span class="tag">Data Integration</span>
-                        <span class="tag">System Architecture</span>
-                    </div>
-                    <div class="view-project">Click to view detailed analysis →</div>
-                </div>
+               <div class="project-card" onclick="openProject('database-design')">
+                   <h3 class="project-title">🗄️ Database Design & Integration</h3>
+                   <p class="project-description">Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.</p>
+                   <div class="project-impact">
+                       <strong>System Impact:</strong> Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
+                   </div>
+                   <div class="project-tags">
+                       <span class="tag">Database Design</span>
+                       <span class="tag">Google AppSheet</span>
+                       <span class="tag">Data Integration</span>
+                       <span class="tag">System Architecture</span>
+                   </div>
+                   <div class="view-project">Click to view detailed analysis →</div>
+               </div>
 
-            </div>
-        </div>
-    </section>
+           </div>
+       </div>
+   </section>
 
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Salesforce Certifications</h2>
-            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: #4a5568;">
-                Comprehensive Salesforce expertise across administration, development, consulting, and specialized domains
-            </p>
-            <div class="certifications-grid">
-                
-                <div class="certification-card">
-                    <div class="cert-level">Specialist</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/agentforce-specialist.png" alt="Agentforce Specialist" onerror="this.style.display='none'; this.parentNode.innerHTML='AF';">
-                    </div>
-                    <div class="cert-name">Agentforce Specialist</div>
-                    <div class="cert-date">Nov 13, 2024</div>
-                </div>
+   <section id="certifications" class="section">
+       <div class="container">
+           <h2 class="section-title">Salesforce Certifications</h2>
+           <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">
+               Comprehensive Salesforce expertise across administration, development, consulting, and specialized domains
+           </p>
+           <div class="certifications-grid">
+               
+               <div class="certification-card">
+                   <div class="cert-level">Specialist</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/agentforce-specialist.png" alt="Agentforce Specialist" onerror="this.style.display='none'; this.parentNode.innerHTML='AF';">
+                   </div>
+                   <div class="cert-name">Agentforce Specialist</div>
+                   <div class="cert-date">Nov 13, 2024</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Architect</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/sharing-visibility-architect.png" alt="Sharing & Visibility Architect" onerror="this.style.display='none'; this.parentNode.innerHTML='SV';">
-                    </div>
-                    <div class="cert-name">Sharing & Visibility Architect</div>
-                    <div class="cert-date">Jun 16, 2024</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Architect</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/sharing-visibility-architect.png" alt="Sharing & Visibility Architect" onerror="this.style.display='none'; this.parentNode.innerHTML='SV';">
+                   </div>
+                   <div class="cert-name">Sharing & Visibility Architect</div>
+                   <div class="cert-date">Jun 16, 2024</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Specialist</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/business-analyst.png" alt="Business Analyst" onerror="this.style.display='none'; this.parentNode.innerHTML='BA';">
-                    </div>
-                    <div class="cert-name">Business Analyst</div>
-                    <div class="cert-date">Jul 6, 2024</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Specialist</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/business-analyst.png" alt="Business Analyst" onerror="this.style.display='none'; this.parentNode.innerHTML='BA';">
+                   </div>
+                   <div class="cert-name">Business Analyst</div>
+                   <div class="cert-date">Jul 6, 2024</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Consultant</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/sales-cloud-consultant.png" alt="Sales Cloud Consultant" onerror="this.style.display='none'; this.parentNode.innerHTML='SC';">
-                    </div>
-                    <div class="cert-name">Sales Cloud Consultant</div>
-                    <div class="cert-date">Mar 17, 2024</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Consultant</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/sales-cloud-consultant.png" alt="Sales Cloud Consultant" onerror="this.style.display='none'; this.parentNode.innerHTML='SC';">
+                   </div>
+                   <div class="cert-name">Sales Cloud Consultant</div>
+                   <div class="cert-date">Mar 17, 2024</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Developer</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/platform-developer-1.png" alt="Platform Developer I" onerror="this.style.display='none'; this.parentNode.innerHTML='PD';">
-                    </div>
-                    <div class="cert-name">Platform Developer I</div>
-                    <div class="cert-date">Oct 9, 2022</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Developer</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/platform-developer-1.png" alt="Platform Developer I" onerror="this.style.display='none'; this.parentNode.innerHTML='PD';">
+                   </div>
+                   <div class="cert-name">Platform Developer I</div>
+                   <div class="cert-date">Oct 9, 2022</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Admin</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/administrator.png" alt="Administrator" onerror="this.style.display='none'; this.parentNode.innerHTML='SF';">
-                    </div>
-                    <div class="cert-name">Administrator</div>
-                    <div class="cert-date">Feb 27, 2022</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Admin</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/administrator.png" alt="Administrator" onerror="this.style.display='none'; this.parentNode.innerHTML='SF';">
+                   </div>
+                   <div class="cert-name">Administrator</div>
+                   <div class="cert-date">Feb 27, 2022</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Builder</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/app-builder.png" alt="App Builder" onerror="this.style.display='none'; this.parentNode.innerHTML='AB';">
-                    </div>
-                    <div class="cert-name">App Builder</div>
-                    <div class="cert-date">Mar 12, 2022</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Builder</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/app-builder.png" alt="App Builder" onerror="this.style.display='none'; this.parentNode.innerHTML='AB';">
+                   </div>
+                   <div class="cert-name">App Builder</div>
+                   <div class="cert-date">Mar 12, 2022</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Associate</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/certified-associate.png" alt="Certified Associate" onerror="this.style.display='none'; this.parentNode.innerHTML='CA';">
-                    </div>
-                    <div class="cert-name">Certified Associate</div>
-                    <div class="cert-date">Foundation Level</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Associate</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/certified-associate.png" alt="Certified Associate" onerror="this.style.display='none'; this.parentNode.innerHTML='CA';">
+                   </div>
+                   <div class="cert-name">Certified Associate</div>
+                   <div class="cert-date">Foundation Level</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Associate</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/ai-associate.png" alt="Certified AI Associate" onerror="this.style.display='none'; this.parentNode.innerHTML='AI';">
-                    </div>
-                    <div class="cert-name">Certified AI Associate</div>
-                    <div class="cert-date">AI Foundation</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Associate</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/ai-associate.png" alt="Certified AI Associate" onerror="this.style.display='none'; this.parentNode.innerHTML='AI';">
+                   </div>
+                   <div class="cert-name">Certified AI Associate</div>
+                   <div class="cert-date">AI Foundation</div>
+               </div>
 
-                <div class="certification-card">
-                    <div class="cert-level">Accredited</div>
-                    <div class="cert-logo">
-                        <img src="assets/certification-icons/financial-services-cloud.png" alt="Financial Services Cloud Professional" onerror="this.style.display='none'; this.parentNode.innerHTML='FS';">
-                    </div>
-                    <div class="cert-name">Financial Services Cloud Professional</div>
-                    <div class="cert-date">Jun 2023 - Oct 2025</div>
-                </div>
+               <div class="certification-card">
+                   <div class="cert-level">Accredited</div>
+                   <div class="cert-logo">
+                       <img src="assets/certification-icons/financial-services-cloud.png" alt="Financial Services Cloud Professional" onerror="this.style.display='none'; this.parentNode.innerHTML='FS';">
+                   </div>
+                   <div class="cert-name">Financial Services Cloud Professional</div>
+                   <div class="cert-date">Jun 2023 - Oct 2025</div>
+               </div>
 
-            </div>
+           </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f0f4ff; border-radius: 15px;">
-                <h3 style="color: #667eea; margin-bottom: 1rem;">🏆 Certification Highlights</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div>
-                        <div style="font-size: 2rem; color: #00a1e0; font-weight: bold;">10</div>
-                        <div style="color: #4a5568;">Active Certifications</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #00a1e0; font-weight: bold;">4</div>
-                        <div style="color: #4a5568;">Specialized Domains</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #00a1e0; font-weight: bold;">1</div>
-                        <div style="color: #4a5568;">Architect Level</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #00a1e0; font-weight: bold;">3+</div>
-                        <div style="color: #4a5568;">Years Certified</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+           <div class="cert-highlights">
+               <h3>🏆 Certification Highlights</h3>
+               <div class="cert-stats">
+                   <div class="cert-stat">
+                       <div class="cert-stat-number">10</div>
+                       <div class="cert-stat-label">Active Certifications</div>
+                   </div>
+                   <div class="cert-stat">
+                       <div class="cert-stat-number">4</div>
+                       <div class="cert-stat-label">Specialized Domains</div>
+                   </div>
+                   <div class="cert-stat">
+                       <div class="cert-stat-number">1</div>
+                       <div class="cert-stat-label">Architect Level</div>
+                   </div>
+                   <div class="cert-stat">
+                       <div class="cert-stat-number">3+</div>
+                       <div class="cert-stat-label">Years Certified</div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🎯 Strategic Consulting</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Digital Transformation</span>
-                        <span class="skill-item">Business Strategy</span>
-                        <span class="skill-item">Process Reengineering</span>
-                        <span class="skill-item">Change Management</span>
-                        <span class="skill-item">Stakeholder Management</span>
-                        <span class="skill-item">Executive Reporting</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>📊 Analytics & Data Science</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">Machine Learning</span>
-                        <span class="skill-item">Statistical Modeling</span>
-                        <span class="skill-item">Predictive Analytics</span>
-                        <span class="skill-item">A/B Testing</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>☁️ Salesforce Ecosystem</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Apex Development</span>
-                        <span class="skill-item">Lightning Web Components</span>
-                        <span class="skill-item">Sales Cloud</span>
-                        <span class="skill-item">Financial Services Cloud</span>
-                        <span class="skill-item">Einstein AI</span>
-                        <span class="skill-item">Data Architecture</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>💼 Business Intelligence</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Tableau</span>
-                        <span class="skill-item">PowerBI</span>
-                        <span class="skill-item">ETL Pipelines</span>
-                        <span class="skill-item">Dashboard Design</span>
-                        <span class="skill-item">KPI Development</span>
-                        <span class="skill-item">Data Visualization</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🏭 Industry Expertise</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Financial Services</span>
-                        <span class="skill-item">Healthcare</span>
-                        <span class="skill-item">Education Technology</span>
-                        <span class="skill-item">Retail & E-commerce</span>
-                        <span class="skill-item">Insurance</span>
-                        <span class="skill-item">Real Estate</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3">🛠️ Development & Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">R Programming</span>
-                        <span class="skill-item">Git/GitHub</span>
-                        <span class="skill-item">Jira</span>
-                        <span class="skill-item">AutoRabit</span>
-                        <span class="skill-item">Copado</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section id="skills" class="section">
+       <div class="container">
+           <h2 class="section-title">Technical Expertise</h2>
+           <div class="skills-grid">
+               <div class="skill-category">
+                   <h3>🎯 Strategic Consulting</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">Digital Transformation</span>
+                       <span class="skill-item">Business Strategy</span>
+                       <span class="skill-item">Process Reengineering</span>
+                       <span class="skill-item">Change Management</span>
+                       <span class="skill-item">Stakeholder Management</span>
+                       <span class="skill-item">Executive Reporting</span>
+                   </div>
+               </div>
+               <div class="skill-category">
+                   <h3>📊 Analytics & Data Science</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">Python</span>
+                       <span class="skill-item">SQL</span>
+                       <span class="skill-item">Machine Learning</span>
+                       <span class="skill-item">Statistical Modeling</span>
+                       <span class="skill-item">Predictive Analytics</span>
+                       <span class="skill-item">A/B Testing</span>
+                   </div>
+               </div>
+               <div class="skill-category">
+                   <h3>☁️ Salesforce Ecosystem</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">Apex Development</span>
+                       <span class="skill-item">Lightning Web Components</span>
+                       <span class="skill-item">Sales Cloud</span>
+                       <span class="skill-item">Financial Services Cloud</span>
+                       <span class="skill-item">Einstein AI</span>
+                       <span class="skill-item">Data Architecture</span>
+                   </div>
+               </div>
+               <div class="skill-category">
+                   <h3>💼 Business Intelligence</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">Tableau</span>
+                       <span class="skill-item">PowerBI</span>
+                       <span class="skill-item">ETL Pipelines</span>
+                       <span class="skill-item">Dashboard Design</span>
+                       <span class="skill-item">KPI Development</span>
+                       <span class="skill-item">Data Visualization</span>
+                   </div>
+               </div>
+               <div class="skill-category">
+                   <h3>🏭 Industry Expertise</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">Financial Services</span>
+                       <span class="skill-item">Healthcare</span>
+                       <span class="skill-item">Education Technology</span>
+                       <span class="skill-item">Retail & E-commerce</span>
+                       <span class="skill-item">Insurance</span>
+                       <span class="skill-item">Real Estate</span>
+                   </div>
+               </div>
+               <div class="skill-category">
+                   <h3>🛠️ Development & Tools</h3>
+                   <div class="skill-list">
+                       <span class="skill-item">JavaScript</span>
+                       <span class="skill-item">R Programming</span>
+                       <span class="skill-item">Git/GitHub</span>
+                       <span class="skill-item">Jira</span>
+                       <span class="skill-item">AutoRabit</span>
+                       <span class="skill-item">Copado</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let's Discuss Your Next Strategic Initiative</h2>
-            <p>Ready to transform your business challenges into competitive advantages? Let's connect.</p>
-            <div class="contact-links">
-                <a href="mailto:atheli.v@northeastern.edu" class="contact-link">📧 Email Me</a>
-                <a href="https://linkedin.com/in/vijay-chandra-atheli" class="contact-link">💼 LinkedIn</a>
-                <a href="tel:+18575656894" class="contact-link">📱 Call Me</a>
-                <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="contact-link" download>📄 Download Resume</a>
-            </div>
-        </div>
-    </section>
+   <section id="contact" class="contact">
+       <div class="container">
+           <h2>Let's Discuss Your Next Strategic Initiative</h2>
+           <p>Ready to transform your business challenges into competitive advantages? Let's connect.</p>
+           <div class="contact-links">
+               <a href="mailto:atheli.v@northeastern.edu" class="contact-link">📧 Email Me</a>
+               <a href="https://linkedin.com/in/vijay-chandra-atheli" class="contact-link">💼 LinkedIn</a>
+               <a href="tel:+18575656894" class="contact-link">📱 Call Me</a>
+               <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="contact-link" download>📄 Download Resume</a>
+           </div>
+       </div>
+   </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Vijay Chandra Atheli. Driving strategic transformation through data-driven insights and Salesforce expertise.</p>
-        </div>
-    </footer>
+   <footer class="footer">
+       <div class="container">
+           <p>&copy; 2025 Vijay Chandra Atheli. Driving strategic transformation through data-driven insights and Salesforce expertise.</p>
+       </div>
+   </footer>
 
-    <!-- Project Detail Modals -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2 id="modalTitle">Project Details</h2>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
+   <!-- Project Detail Modals -->
+   <div id="projectModal" class="modal">
+       <div class="modal-content">
+           <div class="modal-header">
+               <span class="close">&times;</span>
+               <h2 id="modalTitle">Project Details</h2>
+           </div>
+           <div class="modal-body" id="modalBody">
+               <!-- Content will be loaded dynamically -->
+           </div>
+       </div>
+   </div>
 
-    <script>
-        // Project data with detailed information
-        const projectData = {
-            'car-prediction': {
-                title: '🚗 Multi-Brand ML Prediction Engine',
-                content: `
-                    <div class="project-detail-section">
-                        <h3>Project Overview</h3>
-                        <p>Developed a comprehensive machine learning solution for predicting used car prices across multiple brands using advanced regression algorithms and automated evaluation procedures.</p>
-                    </div>
+   <script>
+       // Project data with detailed information
+       const projectData = {
+           'car-prediction': {
+               title: '🚗 Multi-Brand ML Prediction Engine',
+               content: `
+                   <div class="project-detail-section">
+                       <h3>Project Overview</h3>
+                       <p>Developed a comprehensive machine learning solution for predicting used car prices across multiple brands using advanced regression algorithms and automated evaluation procedures.</p>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Technical Implementation</h3>
-                        <div class="methodology-step">
-                            <strong>Data Processing:</strong> Implemented comprehensive data pipeline handling categorical features via one-hot encoding and managing missing values for 9 car brands
-                        </div>
-                        <div class="methodology-step">
-                            <strong>Model Development:</strong> Optimized regression models (Linear Regression, Decision Tree, Random Forest) using Python (Pandas, scikit-learn, joblib)
-                        </div>
-                        <div class="methodology-step">
-                            <strong>Architecture:</strong> Designed modular architecture with automated evaluation procedures ensuring prediction reliability
-                        </div>
-                        <div class="methodology-step">
-                            <strong>User Interface:</strong> Built interactive web application enabling users to input vehicle specifications for instant price estimates
-                        </div>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Technical Implementation</h3>
+                       <div class="methodology-step">
+                           <strong>Data Processing:</strong> Implemented comprehensive data pipeline handling categorical features via one-hot encoding and managing missing values for 9 car brands
+                       </div>
+                       <div class="methodology-step">
+                           <strong>Model Development:</strong> Optimized regression models (Linear Regression, Decision Tree, Random Forest) using Python (Pandas, scikit-learn, joblib)
+                       </div>
+                       <div class="methodology-step">
+                           <strong>Architecture:</strong> Designed modular architecture with automated evaluation procedures ensuring prediction reliability
+                       </div>
+                       <div class="methodology-step">
+                           <strong>User Interface:</strong> Built interactive web application enabling users to input vehicle specifications for instant price estimates
+                       </div>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Exploratory Data Analysis</h3>
-                        <div class="eda-placeholder">
-                            <strong>📊 EDA Components Include:</strong><br>
-                            • Price distribution analysis across car brands<br>
-                            • Feature correlation matrices and scatter plots<br>
-                            • Brand-wise performance metrics comparison<br>
-                            • Model accuracy visualization and validation curves<br>
-                            • Feature importance rankings and SHAP values
-                            <br><br>
-                            <em>Upload your Jupyter notebook (.ipynb) to assets/projects/car-prediction/ to display interactive EDA here</em>
-                        </div>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Exploratory Data Analysis</h3>
+                       <div class="eda-placeholder">
+                           <strong>📊 EDA Components Include:</strong><br>
+                           • Price distribution analysis across car brands<br>
+                           • Feature correlation matrices and scatter plots<br>
+                           • Brand-wise performance metrics comparison<br>
+                           • Model accuracy visualization and validation curves<br>
+                           • Feature importance rankings and SHAP values
+                           <br><br>
+                           <em>Upload your Jupyter notebook (.ipynb) to assets/projects/car-prediction/ to display interactive EDA here</em>
+                       </div>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Key Achievements</h3>
-                        <p><strong>Model Performance:</strong> Achieved optimal performance across 9 car brands with comprehensive evaluation metrics</p>
-                        <p><strong>Technical Innovation:</strong> Implemented automated model selection and hyperparameter tuning</p>
-                        <p><strong>User Experience:</strong> Created intuitive web interface for real-time price predictions</p>
-                        <p><strong>Code Quality:</strong> Developed modular, maintainable codebase with comprehensive documentation</p>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Key Achievements</h3>
+                       <p><strong>Model Performance:</strong> Achieved optimal performance across 9 car brands with comprehensive evaluation metrics</p>
+                       <p><strong>Technical Innovation:</strong> Implemented automated model selection and hyperparameter tuning</p>
+                       <p><strong>User Experience:</strong> Created intuitive web interface for real-time price predictions</p>
+                       <p><strong>Code Quality:</strong> Developed modular, maintainable codebase with comprehensive documentation</p>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Tools & Technologies</h3>
-                        <p><strong>Programming:</strong> Python (Pandas, NumPy, scikit-learn)<br>
-                        <strong>ML Libraries:</strong> joblib for model persistence, automated evaluation frameworks<br>
-                        <strong>Web Development:</strong> Interactive interface for user input and prediction display<br>
-                        <strong>Data Processing:</strong> Advanced feature engineering and categorical encoding techniques</p>
-                    </div>
-                `
-            },
-            'rental-analytics': {
-                title: '🏠 Short-Term Rental Market Analytics Dashboard',
-                content: `
-                    <div class="project-detail-section">
-                        <h3>Business Context</h3>
-                        <p>Comprehensive analysis of short-term rental market dynamics, combining customer sentiment analysis with geospatial intelligence to provide strategic insights for rental platform optimization.</p>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Tools & Technologies</h3>
+                       <p><strong>Programming:</strong> Python (Pandas, NumPy, scikit-learn)<br>
+<strong>ML Libraries:</strong> joblib for model persistence, automated evaluation frameworks<br>
+                       <strong>Web Development:</strong> Interactive interface for user input and prediction display<br>
+                       <strong>Data Processing:</strong> Advanced feature engineering and categorical encoding techniques</p>
+                   </div>
+               `
+           },
+           'rental-analytics': {
+               title: '🏠 Short-Term Rental Market Analytics Dashboard',
+               content: `
+                   <div class="project-detail-section">
+                       <h3>Business Context</h3>
+                       <p>Comprehensive analysis of short-term rental market dynamics, combining customer sentiment analysis with geospatial intelligence to provide strategic insights for rental platform optimization.</p>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Analytical Methodology</h3>
-                        <div class="methodology-step">
-                            <strong>Data Integration:</strong> Cleaned and integrated listings and reviews datasets using Python and Excel, resolving inconsistencies and preparing structured inputs
-                        </div>
-                        <div class="methodology-step">
-                            <strong>Sentiment Analysis:</strong> Performed comprehensive sentiment analysis on customer reviews to identify satisfaction drivers and pain points
-                        </div>
-                        <div class="methodology-step">
-                            <strong>Visualization Strategy:</strong> Created advanced visualizations using Tableau including heatmaps, bubble charts, and word clouds for pattern recognition
-                        </div>
-                        <div class="methodology-step">
-                            <strong>Geospatial Mapping:</strong> Implemented location-based analysis with interactive mapping for geographic trend identification
-                        </div>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Analytical Methodology</h3>
+                       <div class="methodology-step">
+                           <strong>Data Integration:</strong> Cleaned and integrated listings and reviews datasets using Python and Excel, resolving inconsistencies and preparing structured inputs
+                       </div>
+                       <div class="methodology-step">
+                           <strong>Sentiment Analysis:</strong> Performed comprehensive sentiment analysis on customer reviews to identify satisfaction drivers and pain points
+                       </div>
+                       <div class="methodology-step">
+                           <strong>Visualization Strategy:</strong> Created advanced visualizations using Tableau including heatmaps, bubble charts, and word clouds for pattern recognition
+                       </div>
+                       <div class="methodology-step">
+                           <strong>Geospatial Mapping:</strong> Implemented location-based analysis with interactive mapping for geographic trend identification
+                       </div>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Dashboard Features & Insights</h3>
-                        <div class="eda-placeholder">
-                            <strong>📈 Interactive Dashboard Elements:</strong><br>
-                            • Dynamic filtering system for property types and locations<br>
-                            • Real-time booking trend analysis with seasonal patterns<br>
-                            • Host behavior analytics and performance scorecards<br>
-                            • Customer sentiment heatmaps by geographic region<br>
-                            • Pricing strategy optimization recommendations<br>
-                            • Occupancy rate predictive modeling
-                            <br><br>
-                            <em>Upload your Tableau dashboard screenshots or .twbx file to assets/projects/rental-analytics/ for interactive viewing</em>
-                        </div>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Dashboard Features & Insights</h3>
+                       <div class="eda-placeholder">
+                           <strong>📈 Interactive Dashboard Elements:</strong><br>
+                           • Dynamic filtering system for property types and locations<br>
+                           • Real-time booking trend analysis with seasonal patterns<br>
+                           • Host behavior analytics and performance scorecards<br>
+                           • Customer sentiment heatmaps by geographic region<br>
+                           • Pricing strategy optimization recommendations<br>
+                           • Occupancy rate predictive modeling
+                           <br><br>
+                           <em>Upload your Tableau dashboard screenshots or .twbx file to assets/projects/rental-analytics/ for interactive viewing</em>
+                       </div>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Strategic Business Impact</h3>
-                        <p><strong>Market Intelligence:</strong> Delivered actionable insights on booking trends and pricing strategies for platform optimization</p>
-                        <p><strong>Host Performance:</strong> Identified key trust factors and profitability drivers for host success metrics</p>
-                        <p><strong>Customer Experience:</strong> Mapped sentiment patterns to specific service improvements and feature enhancements</p>
-                        <p><strong>Revenue Optimization:</strong> Provided data-driven recommendations for pricing and inventory management</p>
-                    </div>
+                   <div class="project-detail-section">
+                       <h3>Strategic Business Impact</h3>
+                       <p><strong>Market Intelligence:</strong> Delivered actionable insights on booking trends and pricing strategies for platform optimization</p>
+                       <p><strong>Host Performance:</strong> Identified key trust factors and profitability drivers for host success metrics</p>
+                       <p><strong>Customer Experience:</strong> Mapped sentiment patterns to specific service improvements and feature enhancements</p>
+                       <p><strong>Revenue Optimization:</strong> Provided data-driven recommendations for pricing and inventory management</p>
+                   </div>
 
-                    <div class="project-detail-section">
-                        <h3>Technical Implementation</h3>
-                        <p><strong>Data Processing:</strong> Python (Pandas, NumPy) for data cleaning and transformation<br>
-                        <strong>NLP Analysis:</strong> Sentiment analysis using natural language processing techniques<br>
-                        <strong>Visualization:</strong> Tableau for advanced analytics and interactive dashboard creation<br>
-                        <strong>Geospatial Analysis:</strong> Location-based analytics with mapping visualization capabilities</p>
-                    </div>
-                `
-            },
-            // Add more project details following the same pattern...
-        };
+                   <div class="project-detail-section">
+                       <h3>Technical Implementation</h3>
+                       <p><strong>Data Processing:</strong> Python (Pandas, NumPy) for data cleaning and transformation<br>
+                       <strong>NLP Analysis:</strong> Sentiment analysis using natural language processing techniques<br>
+                       <strong>Visualization:</strong> Tableau for advanced analytics and interactive dashboard creation<br>
+                       <strong>Geospatial Analysis:</strong> Location-based analytics with mapping visualization capabilities</p>
+                   </div>
+               `
+           }
+       };
 
-        // Modal functionality
-        const modal = document.getElementById('projectModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalBody = document.getElementById('modalBody');
-        const closeBtn = document.querySelector('.close');
+       // Modal functionality
+       const modal = document.getElementById('projectModal');
+       const modalTitle = document.getElementById('modalTitle');
+       const modalBody = document.getElementById('modalBody');
+       const closeBtn = document.querySelector('.close');
 
-        function openProject(projectId) {
-            const project = projectData[projectId];
-            if (project) {
-                modalTitle.textContent = project.title;
-                modalBody.innerHTML = project.content;
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-        }
+       function openProject(projectId) {
+           const project = projectData[projectId];
+           if (project) {
+               modalTitle.textContent = project.title;
+               modalBody.innerHTML = project.content;
+               modal.style.display = 'block';
+               document.body.style.overflow = 'hidden';
+           }
+       }
 
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+       closeBtn.onclick = function() {
+           modal.style.display = 'none';
+           document.body.style.overflow = 'auto';
+       }
 
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
+       window.onclick = function(event) {
+           if (event.target === modal) {
+               modal.style.display = 'none';
+               document.body.style.overflow = 'auto';
+           }
+       }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+       // Smooth scrolling for navigation links
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+           anchor.addEventListener('click', function (e) {
+               e.preventDefault();
+               document.querySelector(this.getAttribute('href')).scrollIntoView({
+                   behavior: 'smooth'
+               });
+           });
+       });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
+       // Add scroll effect to header
+       window.addEventListener('scroll', function() {
+           const header = document.querySelector('.header');
+           if (window.scrollY > 100) {
+               header.style.background = 'rgba(0, 0, 0, 0.6)';
+               header.style.backdropFilter = 'blur(30px)';
+           } else {
+               header.style.background = 'rgba(0, 0, 0, 0.4)';
+               header.style.backdropFilter = 'blur(25px)';
+           }
+       });
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
+       // Animate elements on scroll
+       const observerOptions = {
+           threshold: 0.3,
+           rootMargin: '0px 0px -50px 0px'
+       };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
+       const observer = new IntersectionObserver(function(entries) {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   entry.target.style.transform = 'translateY(0)';
+                   entry.target.style.opacity = '1';
+               }
+           });
+       }, observerOptions);
 
-        document.querySelectorAll('.project-card, .timeline-item, .certification-card, .skill-category').forEach(el => {
-            el.style.transform = 'translateY(20px)';
-            el.style.opacity = '0';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+       document.querySelectorAll('.project-card, .timeline-item, .certification-card, .skill-category, .stat-card').forEach(el => {
+           el.style.transform = 'translateY(30px)';
+           el.style.opacity = '0';
+           el.style.transition = 'all 0.8s ease';
+           observer.observe(el);
+       });
+
+       // Add particle animation effect
+       function createParticle() {
+           const particle = document.createElement('div');
+           particle.style.position = 'fixed';
+           particle.style.width = '2px';
+           particle.style.height = '2px';
+           particle.style.background = 'rgba(255, 255, 255, 0.3)';
+           particle.style.borderRadius = '50%';
+           particle.style.pointerEvents = 'none';
+           particle.style.zIndex = '1';
+           particle.style.left = Math.random() * window.innerWidth + 'px';
+           particle.style.top = window.innerHeight + 'px';
+           
+           document.body.appendChild(particle);
+           
+           const animation = particle.animate([
+               { transform: 'translateY(0px)', opacity: 1 },
+               { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+           ], {
+               duration: Math.random() * 3000 + 2000,
+               easing: 'linear'
+           });
+           
+           animation.onfinish = () => particle.remove();
+       }
+
+       // Create particles periodically
+       setInterval(createParticle, 300);
+
+       // Enhanced hover effects for cards
+       document.querySelectorAll('.glass, .glass-subtle').forEach(element => {
+           element.addEventListener('mouseenter', function() {
+               this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+               this.style.background = 'rgba(255, 255, 255, 0.05)';
+           });
+           
+           element.addEventListener('mouseleave', function() {
+               this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+               this.style.background = 'rgba(255, 255, 255, 0.03)';
+           });
+       });
+   </script>
 </body>
 </html>
