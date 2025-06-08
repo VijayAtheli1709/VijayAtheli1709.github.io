@@ -377,11 +377,72 @@
            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
        }
 
+       .project-header {
+           display: flex;
+           justify-content: space-between;
+           align-items: flex-start;
+           margin-bottom: 1rem;
+           background: rgba(255, 255, 255, 0.02);
+           padding: 1rem;
+           border-radius: 12px;
+           border: 1px solid rgba(255, 255, 255, 0.05);
+       }
+
        .project-title {
            font-size: 1.5rem;
            font-weight: 700;
-           margin-bottom: 1.5rem;
+           margin-bottom: 0;
            color: #ffffff;
+           flex: 1;
+           margin-right: 1rem;
+       }
+
+       .project-actions {
+           display: flex;
+           gap: 0.5rem;
+           opacity: 1;
+           transition: all 0.3s ease;
+       }
+
+       .action-btn {
+           padding: 0.6rem 1.2rem;
+           border: none;
+           border-radius: 25px;
+           font-size: 0.85rem;
+           font-weight: 600;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           text-decoration: none;
+           display: inline-flex;
+           align-items: center;
+           gap: 0.3rem;
+           font-family: inherit;
+           white-space: nowrap;
+       }
+
+       .demo-btn {
+           background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+           color: white;
+           border: 1px solid rgba(255, 255, 255, 0.3);
+       }
+
+       .demo-btn:hover {
+           transform: scale(1.05);
+           background: linear-gradient(45deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+           box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+       }
+
+       .code-btn {
+           background: rgba(0, 0, 0, 0.3);
+           color: rgba(255, 255, 255, 0.9);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
+
+       .code-btn:hover {
+           background: rgba(0, 0, 0, 0.5);
+           transform: scale(1.05);
+           color: white;
+           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
        }
 
        .project-description {
@@ -813,6 +874,31 @@
            .section-title {
                font-size: 2.2rem;
            }
+
+           .project-header {
+               flex-direction: column;
+               align-items: flex-start;
+               gap: 1rem;
+           }
+
+           .project-title {
+               margin-right: 0;
+               margin-bottom: 1rem;
+           }
+
+           .project-actions {
+               opacity: 1;
+               flex-direction: row;
+               gap: 0.4rem;
+               width: 100%;
+               justify-content: flex-start;
+           }
+           
+           .action-btn {
+               font-size: 0.75rem;
+               padding: 0.5rem 1rem;
+               flex: 0 0 auto;
+           }
        }
 
        .highlight {
@@ -944,8 +1030,8 @@
                    <p>As a <span class="highlight">certified Salesforce expert</span> with 10 active certifications including specialized credentials in Financial Services and AI, I specialize in digital transformation consulting, combining advanced analytics with strategic business thinking to deliver measurable impact for Fortune 500 clients.</p>
                    
                    <div style="margin-top: 3rem;">
-                       <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="cta-button" download>📄 Download Resume</a>
-                       <a href="mailto:atheli.v@northeastern.edu" class="cta-button">📧 Contact Me</a>
+                       <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="cta-button" download>Download Resume</a>
+                       <a href="mailto:atheli.v@northeastern.edu" class="cta-button">Contact Me</a>
                    </div>
                </div>
            </div>
@@ -961,7 +1047,7 @@
                    <div class="experience-header">
                        <div>
                            <div class="job-title">Marketing & Operations Intern</div>
-                           <div class="company">🚀 Risepoint (EdTech Startup)</div>
+                           <div class="company">Risepoint (EdTech Startup)</div>
                        </div>
                        <div class="duration">Jun 2025 - Present</div>
                    </div>
@@ -979,7 +1065,7 @@
                    <div class="experience-header">
                        <div>
                            <div class="job-title">Analytics Intern</div>
-                           <div class="company">🎯 FourBlock - Veteran Career Readiness</div>
+                           <div class="company">FourBlock - Veteran Career Readiness</div>
                        </div>
                        <div class="duration">Jan 2025 - Apr 2025</div>
                    </div>
@@ -996,7 +1082,7 @@
                    <div class="experience-header">
                        <div>
                            <div class="job-title">Business Analyst</div>
-                           <div class="company">⚡ Deloitte Consulting USI</div>
+                           <div class="company">Deloitte Consulting USI</div>
                        </div>
                        <div class="duration">2021 - 2024</div>
                    </div>
@@ -1022,8 +1108,18 @@
         </p>
         <div class="projects-grid">
             
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/')">
+                <div class="project-header">
+                    <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Multi-Brand-ML-Prediction-Engine" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.</p>
                 <div class="project-impact">
                     <strong>Technical Achievement:</strong> Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
@@ -1036,34 +1132,54 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/', '_blank')" style="cursor: pointer;">
-    <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
-    <p class="project-description">
-        Interactive Tableau dashboard analyzing 30,000+ NYC Airbnb listings across 218 neighborhoods. 
-        Features sentiment analysis, pricing optimization models, and host performance benchmarking 
-        to deliver actionable market intelligence for the post-pandemic travel industry.
-    </p>
-    <div class="project-impact">
-        <strong>Business Impact:</strong> Identified key pricing strategies that increase host revenue by 15-25%, 
-        mapped high-demand neighborhoods for investment targeting, and provided data-driven recommendations 
-        for optimizing occupancy rates and guest satisfaction scores.
-    </div>
-    <div class="project-tags">
-        <span class="tag">Interactive Dashboard</span>
-        <span class="tag">Tableau Public</span>
-        <span class="tag">Business Intelligence</span>
-        <span class="tag">Market Research</span>
-        <span class="tag">Data Visualization</span>
-        <span class="tag">Hospitality Analytics</span>
-    </div>
-</div>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/')">
+                <div class="project-header">
+                    <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Airbnb-NYC-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <p class="project-description">
+                    Interactive Tableau dashboard analyzing 30,000+ NYC Airbnb listings across 218 neighborhoods. 
+                    Features sentiment analysis, pricing optimization models, and host performance benchmarking 
+                    to deliver actionable market intelligence for the post-pandemic travel industry.
+                </p>
+                <div class="project-impact">
+                    <strong>Business Impact:</strong> Identified key pricing strategies that increase host revenue by 15-25%, 
+                    mapped high-demand neighborhoods for investment targeting, and provided data-driven recommendations 
+                    for optimizing occupancy rates and guest satisfaction scores.
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Interactive Dashboard</span>
+                    <span class="tag">Tableau Public</span>
+                    <span class="tag">Business Intelligence</span>
+                    <span class="tag">Market Research</span>
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Hospitality Analytics</span>
+                </div>
+            </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/')">
+                <div class="project-header">
+                    <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Revenue-Analytics-for-Craft-Brewery" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Multi-model analysis (Linear Regression, Random Forest, Decision Tree) of hospitality revenue drivers, achieving 0.433 R² accuracy in weather-based forecasting using Python and scikit-learn.</p>
-       <div class="project-impact">
-           <strong>Business Impact:</strong> Identified $2,500 daily revenue uplift from live music events and optimal scheduling strategies, with 3x higher weekend performance metrics.
-               </div>
+                <div class="project-impact">
+                    <strong>Business Impact:</strong> Identified $2,500 daily revenue uplift from live music events and optimal scheduling strategies, with 3x higher weekend performance metrics.
+                </div>
                 <div class="project-tags">
                     <span class="tag">Python</span>
                     <span class="tag">Scikit-Learn</span>
@@ -1072,8 +1188,18 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">🛍️ Retail Analytics & Business Insights</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/')">
+                <div class="project-header">
+                    <h3 class="project-title">Retail Analytics & Business Insights</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Retail-Analytics-Business-Insights" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.</p>
                 <div class="project-impact">
                     <strong>Business Value:</strong> Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
@@ -1086,8 +1212,18 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">🎓 Boston Housing Market Analysis</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/')">
+                <div class="project-header">
+                    <h3 class="project-title">Boston Housing Market Analysis</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Boston-Housing-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.</p>
                 <div class="project-impact">
                     <strong>Research Impact:</strong> Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
@@ -1100,8 +1236,18 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">⚕️ Healthcare Risk Assessment</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/')">
+                <div class="project-header">
+                    <h3 class="project-title">Healthcare Risk Assessment</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Healthcare-Risk-Assessment" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.</p>
                 <div class="project-impact">
                     <strong>Clinical Impact:</strong> Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
@@ -1114,8 +1260,18 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Player-Performance-Prediction/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">⚽ Player Performance Prediction</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Player-Performance-Prediction/')">
+                <div class="project-header">
+                    <h3 class="project-title">Player Performance Prediction</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Player-Performance-Prediction/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Player-Performance-Prediction" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.</p>
                 <div class="project-impact">
                     <strong>Sports Intelligence:</strong> Developed interactive Tableau dashboards enabling coaches and analysts to make data-driven decisions for player evaluation and game strategy.
@@ -1128,8 +1284,18 @@
                 </div>
             </div>
 
-            <div class="project-card" onclick="window.open('https://vijayatheli1709.github.io/Database-Design-Integration/', '_blank')" style="cursor: pointer;">
-                <h3 class="project-title">🗄️ Database Design & Integration</h3>
+            <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Database-Design-Integration/')">
+                <div class="project-header">
+                    <h3 class="project-title">Database Design & Integration</h3>
+                    <div class="project-actions">
+                        <a href="https://vijayatheli1709.github.io/Database-Design-Integration/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                            View Detail Analysis
+                        </a>
+                        <a href="https://github.com/vijayatheli1709/Database-Design-Integration" class="action-btn code-btn" onclick="event.stopPropagation()">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
                 <p class="project-description">Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.</p>
                 <div class="project-impact">
                     <strong>System Impact:</strong> Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
@@ -1247,7 +1413,7 @@
            </div>
 
            <div class="cert-highlights">
-               <h3>🏆 Certification Highlights</h3>
+               <h3>Certification Highlights</h3>
                <div class="cert-stats">
                    <div class="cert-stat">
                        <div class="cert-stat-number">10</div>
@@ -1275,7 +1441,7 @@
            <h2 class="section-title">Technical Expertise</h2>
            <div class="skills-grid">
                <div class="skill-category">
-                   <h3>🎯 Strategic Consulting</h3>
+                   <h3>Strategic Consulting</h3>
                    <div class="skill-list">
                        <span class="skill-item">Digital Transformation</span>
                        <span class="skill-item">Business Strategy</span>
@@ -1286,7 +1452,7 @@
                    </div>
                </div>
                <div class="skill-category">
-                   <h3>📊 Analytics & Data Science</h3>
+                   <h3>Analytics & Data Science</h3>
                    <div class="skill-list">
                        <span class="skill-item">Python</span>
                        <span class="skill-item">SQL</span>
@@ -1297,7 +1463,7 @@
                    </div>
                </div>
                <div class="skill-category">
-                   <h3>☁️ Salesforce Ecosystem</h3>
+                   <h3>Salesforce Ecosystem</h3>
                    <div class="skill-list">
                        <span class="skill-item">Apex Development</span>
                        <span class="skill-item">Lightning Web Components</span>
@@ -1308,7 +1474,7 @@
                    </div>
                </div>
                <div class="skill-category">
-                   <h3>💼 Business Intelligence</h3>
+                   <h3>Business Intelligence</h3>
                    <div class="skill-list">
                        <span class="skill-item">Tableau</span>
                        <span class="skill-item">PowerBI</span>
@@ -1319,7 +1485,7 @@
                    </div>
                </div>
                <div class="skill-category">
-                   <h3>🏭 Industry Expertise</h3>
+                   <h3>Industry Expertise</h3>
                    <div class="skill-list">
                        <span class="skill-item">Financial Services</span>
                        <span class="skill-item">Healthcare</span>
@@ -1330,7 +1496,7 @@
                    </div>
                </div>
                <div class="skill-category">
-                   <h3>🛠️ Development & Tools</h3>
+                   <h3>Development & Tools</h3>
                    <div class="skill-list">
                        <span class="skill-item">JavaScript</span>
                        <span class="skill-item">R Programming</span>
@@ -1349,10 +1515,10 @@
            <h2>Let's Discuss Your Next Strategic Initiative</h2>
            <p>Ready to transform your business challenges into competitive advantages? Let's connect.</p>
            <div class="contact-links">
-               <a href="mailto:atheli.v@northeastern.edu" class="contact-link">📧 Email Me</a>
-               <a href="https://linkedin.com/in/vijay-chandra-atheli" class="contact-link">💼 LinkedIn</a>
-               <a href="tel:+18575656894" class="contact-link">📱 Call Me</a>
-               <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="contact-link" download>📄 Download Resume</a>
+               <a href="mailto:atheli.v@northeastern.edu" class="contact-link">Email Me</a>
+               <a href="https://linkedin.com/in/vijay-chandra-atheli" class="contact-link">LinkedIn</a>
+               <a href="tel:+18575656894" class="contact-link">Call Me</a>
+               <a href="assets/Vijay_Chandra_Atheli_Resume.pdf" class="contact-link" download>Download Resume</a>
            </div>
        </div>
    </section>
@@ -1380,7 +1546,7 @@
        // Project data with detailed information
        const projectData = {
            'car-prediction': {
-               title: '🚗 Multi-Brand ML Prediction Engine',
+               title: 'Multi-Brand ML Prediction Engine',
                content: `
                    <div class="project-detail-section">
                        <h3>Project Overview</h3>
@@ -1406,7 +1572,7 @@
                    <div class="project-detail-section">
                        <h3>Exploratory Data Analysis</h3>
                        <div class="eda-placeholder">
-                           <strong>📊 EDA Components Include:</strong><br>
+                           <strong>EDA Components Include:</strong><br>
                            • Price distribution analysis across car brands<br>
                            • Feature correlation matrices and scatter plots<br>
                            • Brand-wise performance metrics comparison<br>
@@ -1428,14 +1594,14 @@
                    <div class="project-detail-section">
                        <h3>Tools & Technologies</h3>
                        <p><strong>Programming:</strong> Python (Pandas, NumPy, scikit-learn)<br>
-<strong>ML Libraries:</strong> joblib for model persistence, automated evaluation frameworks<br>
+                       <strong>ML Libraries:</strong> joblib for model persistence, automated evaluation frameworks<br>
                        <strong>Web Development:</strong> Interactive interface for user input and prediction display<br>
                        <strong>Data Processing:</strong> Advanced feature engineering and categorical encoding techniques</p>
                    </div>
                `
            },
            'rental-analytics': {
-               title: '🏠 Short-Term Rental Market Analytics Dashboard',
+               title: 'Short-Term Rental Market Analytics Dashboard',
                content: `
                    <div class="project-detail-section">
                        <h3>Business Context</h3>
@@ -1461,7 +1627,7 @@
                    <div class="project-detail-section">
                        <h3>Dashboard Features & Insights</h3>
                        <div class="eda-placeholder">
-                           <strong>📈 Interactive Dashboard Elements:</strong><br>
+                           <strong>Interactive Dashboard Elements:</strong><br>
                            • Dynamic filtering system for property types and locations<br>
                            • Real-time booking trend analysis with seasonal patterns<br>
                            • Host behavior analytics and performance scorecards<br>
@@ -1498,14 +1664,9 @@
        const modalBody = document.getElementById('modalBody');
        const closeBtn = document.querySelector('.close');
 
-       function openProject(projectId) {
-           const project = projectData[projectId];
-           if (project) {
-               modalTitle.textContent = project.title;
-               modalBody.innerHTML = project.content;
-               modal.style.display = 'block';
-               document.body.style.overflow = 'hidden';
-           }
+       function openProject(url) {
+           // Open the GitHub Pages URL directly
+           window.open(url, '_blank');
        }
 
        closeBtn.onclick = function() {
