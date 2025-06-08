@@ -378,23 +378,14 @@
        }
 
        .project-header {
-           display: flex;
-           justify-content: space-between;
-           align-items: flex-start;
            margin-bottom: 1rem;
-           background: rgba(255, 255, 255, 0.02);
-           padding: 1rem;
-           border-radius: 12px;
-           border: 1px solid rgba(255, 255, 255, 0.05);
        }
 
        .project-title {
            font-size: 1.5rem;
            font-weight: 700;
-           margin-bottom: 0;
+           margin-bottom: 1.5rem;
            color: #ffffff;
-           flex: 1;
-           margin-right: 1rem;
        }
 
        .project-actions {
@@ -402,6 +393,8 @@
            gap: 0.5rem;
            opacity: 1;
            transition: all 0.3s ease;
+           margin-top: 1.5rem;
+           justify-content: flex-start;
        }
 
        .action-btn {
@@ -421,28 +414,35 @@
        }
 
        .demo-btn {
-           background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
-           color: white;
-           border: 1px solid rgba(255, 255, 255, 0.3);
+           background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+           color: rgba(255, 255, 255, 0.9);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+           font-weight: 700;
        }
 
        .demo-btn:hover {
            transform: scale(1.05);
-           background: linear-gradient(45deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
-           box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+           background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+           border-color: rgba(255, 255, 255, 0.3);
+           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+           color: #ffffff;
        }
 
        .code-btn {
-           background: rgba(0, 0, 0, 0.3);
+           background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
            color: rgba(255, 255, 255, 0.9);
            border: 1px solid rgba(255, 255, 255, 0.2);
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+           font-weight: 700;
        }
 
        .code-btn:hover {
-           background: rgba(0, 0, 0, 0.5);
            transform: scale(1.05);
-           color: white;
-           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+           background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+           border-color: rgba(255, 255, 255, 0.3);
+           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+           color: #ffffff;
        }
 
        .project-description {
@@ -876,13 +876,10 @@
            }
 
            .project-header {
-               flex-direction: column;
-               align-items: flex-start;
-               gap: 1rem;
+               margin-bottom: 1rem;
            }
 
            .project-title {
-               margin-right: 0;
                margin-bottom: 1rem;
            }
 
@@ -890,8 +887,8 @@
                opacity: 1;
                flex-direction: row;
                gap: 0.4rem;
-               width: 100%;
                justify-content: flex-start;
+               margin-top: 1rem;
            }
            
            .action-btn {
@@ -1109,17 +1106,7 @@
         <div class="projects-grid">
             
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/')">
-                <div class="project-header">
-                    <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Multi-Brand-ML-Prediction-Engine" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
                 <p class="project-description">Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.</p>
                 <div class="project-impact">
                     <strong>Technical Achievement:</strong> Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
@@ -1130,20 +1117,18 @@
                     <span class="tag">Regression Models</span>
                     <span class="tag">Web Development</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Multi-Brand-ML-Prediction-Engine" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/')">
-                <div class="project-header">
-                    <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Airbnb-NYC-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
                 <p class="project-description">
                     Interactive Tableau dashboard analyzing 30,000+ NYC Airbnb listings across 218 neighborhoods. 
                     Features sentiment analysis, pricing optimization models, and host performance benchmarking 
@@ -1162,20 +1147,18 @@
                     <span class="tag">Data Visualization</span>
                     <span class="tag">Hospitality Analytics</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Airbnb-NYC-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/')">
-                <div class="project-header">
-                    <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Revenue-Analytics-for-Craft-Brewery" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
                 <p class="project-description">Multi-model analysis (Linear Regression, Random Forest, Decision Tree) of hospitality revenue drivers, achieving 0.433 R² accuracy in weather-based forecasting using Python and scikit-learn.</p>
                 <div class="project-impact">
                     <strong>Business Impact:</strong> Identified $2,500 daily revenue uplift from live music events and optimal scheduling strategies, with 3x higher weekend performance metrics.
@@ -1186,20 +1169,18 @@
                     <span class="tag">Statistical Modeling</span>
                     <span class="tag">Data Visualization</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Revenue-Analytics-for-Craft-Brewery" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/')">
-                <div class="project-header">
-                    <h3 class="project-title">Retail Analytics & Business Insights</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Retail-Analytics-Business-Insights" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Retail Analytics & Business Insights</h3>
                 <p class="project-description">Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.</p>
                 <div class="project-impact">
                     <strong>Business Value:</strong> Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
@@ -1210,20 +1191,18 @@
                     <span class="tag">Linear Programming</span>
                     <span class="tag">EDA</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Retail-Analytics-Business-Insights" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/')">
-                <div class="project-header">
-                    <h3 class="project-title">Boston Housing Market Analysis</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Boston-Housing-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Boston Housing Market Analysis</h3>
                 <p class="project-description">Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.</p>
                 <div class="project-impact">
                     <strong>Research Impact:</strong> Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
@@ -1234,20 +1213,18 @@
                     <span class="tag">VIF Analysis</span>
                     <span class="tag">Data Visualization</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Boston-Housing-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/')">
-                <div class="project-header">
-                    <h3 class="project-title">Healthcare Risk Assessment</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Healthcare-Risk-Assessment" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Healthcare Risk Assessment</h3>
                 <p class="project-description">Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.</p>
                 <div class="project-impact">
                     <strong>Clinical Impact:</strong> Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
@@ -1258,20 +1235,18 @@
                     <span class="tag">XGBoost</span>
                     <span class="tag">Feature Engineering</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Healthcare-Risk-Assessment" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Player-Performance-Prediction/')">
-                <div class="project-header">
-                    <h3 class="project-title">Player Performance Prediction</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Player-Performance-Prediction/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Player-Performance-Prediction" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Player Performance Prediction</h3>
                 <p class="project-description">Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.</p>
                 <div class="project-impact">
                     <strong>Sports Intelligence:</strong> Developed interactive Tableau dashboards enabling coaches and analysts to make data-driven decisions for player evaluation and game strategy.
@@ -1282,20 +1257,18 @@
                     <span class="tag">Tableau</span>
                     <span class="tag">Random Forest</span>
                 </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Player-Performance-Prediction/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Player-Performance-Prediction" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
+                </div>
             </div>
 
             <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Database-Design-Integration/')">
-                <div class="project-header">
-                    <h3 class="project-title">Database Design & Integration</h3>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Database-Design-Integration/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Detail Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Database-Design-Integration" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
+                <h3 class="project-title">Database Design & Integration</h3>
                 <p class="project-description">Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.</p>
                 <div class="project-impact">
                     <strong>System Impact:</strong> Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
@@ -1305,6 +1278,14 @@
                     <span class="tag">Google AppSheet</span>
                     <span class="tag">Data Integration</span>
                     <span class="tag">System Architecture</span>
+                </div>
+                <div class="project-actions">
+                    <a href="https://vijayatheli1709.github.io/Database-Design-Integration/" class="action-btn demo-btn" onclick="event.stopPropagation()">
+                        View Detail Analysis
+                    </a>
+                    <a href="https://github.com/vijayatheli1709/Database-Design-Integration" class="action-btn code-btn" onclick="event.stopPropagation()">
+                        GitHub
+                    </a>
                 </div>
             </div>
 
