@@ -263,14 +263,37 @@
             align-items: center;
             margin: 4rem 0;
             position: relative;
-        }
-
-        .timeline-entry:nth-child(odd) {
             flex-direction: row;
         }
 
-        .timeline-entry:nth-child(even) {
-            flex-direction: row-reverse;
+        .timeline-content-wrapper {
+            width: 50%;
+            margin-left: 50%;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            border-right-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-50%);
         }
 
         .timeline-node {
@@ -287,67 +310,21 @@
             transition: all 0.3s ease;
         }
 
-        .timeline-entry:hover .timeline-node {
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .timeline-content-wrapper {
-            width: 45%;
-            position: relative;
-        }
-
-        .timeline-content {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 0;
-            height: 0;
-            border: 15px solid transparent;
-            transform: translateY(-50%);
-        }
-
-        .timeline-entry:nth-child(odd) .timeline-content::before {
-            right: -30px;
-            border-left-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-entry:nth-child(even) .timeline-content::before {
-            left: -30px;
-            border-right-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-content:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
         .timeline-org-badge {
-            display: inline-block;
+            position: absolute;
+            left: -25%;
+            top: 50%;
+            transform: translateY(-50%);
             background: linear-gradient(135deg, #4A90E2, #357ABD);
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            white-space: nowrap;
+            z-index: 5;
         }
 
         .timeline-org-badge.northeastern {
@@ -370,11 +347,18 @@
             background: linear-gradient(135deg, #FF6B6B, #E74C3C);
         }
 
-        .timeline-role {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+        .timeline-entry:hover .timeline-node {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .timeline-content:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         .timeline-date {
