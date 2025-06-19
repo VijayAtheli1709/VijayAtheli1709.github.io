@@ -240,6 +240,16 @@
             background-clip: text;
         }
 
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* Timeline Styles - Visual Timeline */
         .visual-timeline {
             position: relative;
@@ -620,6 +630,90 @@
             color: #ffffff;
         }
 
+        /* Certifications Grid */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .certification-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+        }
+
+        .certification-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .certification-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .certification-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: brightness(0.9);
+        }
+
+        .certification-card:hover .certification-icon {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .certification-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-provider {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .certification-date {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+        }
+
         /* Professional Recognition Styles */
         .awards-grid {
             display: grid;
@@ -983,6 +1077,11 @@
                 flex: none;
             }
 
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .contact-links {
                 flex-direction: column;
                 align-items: center;
@@ -1030,16 +1129,6 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
-
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
     </style>
 </head>
 <body>
@@ -1051,6 +1140,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#journey">Journey</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#recognition">Recognition</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1463,6 +1553,120 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Certifications</h2>
+            <p class="section-subtitle">
+                Maintaining cutting-edge expertise through continuous learning and professional development across multiple platforms
+            </p>
+            
+            <div class="certifications-grid">
+                
+                <!-- Salesforce Administrator -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/administrator.png" alt="Salesforce Administrator">
+                    </div>
+                    <div class="certification-name">Salesforce Administrator</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Salesforce AI Associate -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/ai-associate.png" alt="Salesforce AI Associate">
+                    </div>
+                    <div class="certification-name">Salesforce AI Associate</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- AgentForce Specialist -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/agentforce-specialist.png" alt="AgentForce Specialist">
+                    </div>
+                    <div class="certification-name">AgentForce Specialist</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- App Builder -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/app-builder.png" alt="Salesforce App Builder">
+                    </div>
+                    <div class="certification-name">Platform App Builder</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Business Analyst -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/business-analyst.png" alt="Salesforce Business Analyst">
+                    </div>
+                    <div class="certification-name">Business Analyst</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Salesforce Associate -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/certified-associate.png" alt="Salesforce Associate">
+                    </div>
+                    <div class="certification-name">Salesforce Associate</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Financial Services Cloud -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/financial-services-cloud.png" alt="Financial Services Cloud">
+                    </div>
+                    <div class="certification-name">Financial Services Cloud</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Platform Developer I -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/platform-developer-1.png" alt="Platform Developer I">
+                    </div>
+                    <div class="certification-name">Platform Developer I</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Sales Cloud Consultant -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/sales-cloud-consultant.png" alt="Sales Cloud Consultant">
+                    </div>
+                    <div class="certification-name">Sales Cloud Consultant</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+                <!-- Sharing and Visibility Architect -->
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="assets/certification-icons/sharing-visibility-architect.png" alt="Sharing and Visibility Architect">
+                    </div>
+                    <div class="certification-name">Sharing and Visibility Architect</div>
+                    <div class="certification-provider">Salesforce</div>
+                    <div class="certification-date">Active</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Professional Recognition Section -->
     <section id="recognition" class="section">
         <div class="container">
@@ -1716,6 +1920,23 @@
             });
         });
 
+        // Add hover effects for certification cards
+        document.querySelectorAll('.certification-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.03)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1759,6 +1980,14 @@
 
         // Observe project cards for animation
         document.querySelectorAll('.project-card').forEach(card => {
+            card.style.transform = 'translateY(30px)';
+            card.style.opacity = '0';
+            card.style.transition = 'all 0.8s ease';
+            observer.observe(card);
+        });
+
+        // Observe certification cards for animation
+        document.querySelectorAll('.certification-card').forEach(card => {
             card.style.transform = 'translateY(30px)';
             card.style.opacity = '0';
             card.style.transition = 'all 0.8s ease';
