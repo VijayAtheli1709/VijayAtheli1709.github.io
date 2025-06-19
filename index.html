@@ -413,10 +413,10 @@
             font-size: 1.2rem;
         }
 
-        /* Projects Grid */
+        /* Updated Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2.5rem;
             margin-top: 4rem;
         }
@@ -427,11 +427,10 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 3rem;
+            overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
 
         .project-card::before {
@@ -451,43 +450,97 @@
             box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
         }
 
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #ffffff;
+            line-height: 1.3;
         }
 
         .project-description {
             margin-bottom: 1.5rem;
             line-height: 1.7;
             color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
         }
 
         .project-impact {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 12px;
             margin: 1.5rem 0;
             border-left: 3px solid rgba(255, 255, 255, 0.4);
+            position: relative;
+        }
+
+        .project-impact::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 4px;
+            height: calc(100% + 2px);
+            background: linear-gradient(180deg, rgba(80, 84, 95, 0.8), rgba(60, 64, 75, 0.6));
+            border-radius: 2px;
+        }
+
+        .project-impact-label {
+            font-weight: 700;
             color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-impact-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
+            gap: 0.6rem;
+            margin: 1.5rem 0;
         }
 
         .tag {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
@@ -499,54 +552,71 @@
 
         .project-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.8rem;
             margin-top: 1.5rem;
         }
 
         .action-btn {
-            padding: 0.6rem 1.2rem;
+            flex: 1;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 25px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
+            justify-content: center;
+            gap: 0.5rem;
             font-family: inherit;
+            position: relative;
+            overflow: hidden;
         }
 
-        .demo-btn {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        .view-analysis-btn {
+            background: rgba(60, 64, 75, 0.9);
             color: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            font-weight: 700;
+            border: 1px solid rgba(80, 84, 95, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .demo-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        .view-analysis-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .view-analysis-btn:hover::before {
+            left: 100%;
+        }
+
+        .view-analysis-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(70, 74, 85, 0.95);
+            border-color: rgba(90, 94, 105, 0.8);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             color: #ffffff;
         }
 
-        .code-btn {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+        .github-btn {
+            background: rgba(60, 64, 75, 0.9);
             color: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            font-weight: 700;
+            border: 1px solid rgba(80, 84, 95, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .code-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        .github-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(70, 74, 85, 0.95);
+            border-color: rgba(90, 94, 105, 0.8);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             color: #ffffff;
         }
 
@@ -898,6 +968,19 @@
 
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-content {
+                padding: 2rem;
+            }
+
+            .project-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                flex: none;
             }
 
             .contact-links {
@@ -946,6 +1029,16 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -1126,189 +1219,274 @@
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Individual Projects Portfolio</h2>
-            <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">
+            <p class="section-subtitle">
                 Demonstrating analytical expertise through hands-on projects spanning machine learning, market analysis, and business intelligence
             </p>
+            
             <div class="projects-grid">
                 
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/')">
-                    <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
-                    <p class="project-description">Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
+                <!-- Project 1: Multi-Brand ML Prediction Engine -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/multi-brand-ml-prediction.jpg" alt="Multi-Brand ML Prediction Engine" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Multi-Brand ML Prediction Engine</div>'">
                     </div>
-                    <div class="project-tags">
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Regression Models</span>
-                        <span class="tag">Web Development</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Multi-Brand-ML-Prediction-Engine" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/')">
-                    <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
-                    <p class="project-description">
-                        Interactive Tableau dashboard analyzing 30,000+ NYC Airbnb listings across 218 neighborhoods. 
-                        Features sentiment analysis, pricing optimization models, and host performance benchmarking.
-                    </p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Identified key pricing strategies that increase host revenue by 15-25%, mapped high-demand neighborhoods for investment targeting, and provided data-driven recommendations for optimizing occupancy rates.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Interactive Dashboard</span>
-                        <span class="tag">Tableau Public</span>
-                        <span class="tag">Business Intelligence</span>
-                        <span class="tag">Market Research</span>
-                        <span class="tag">Data Visualization</span>
-                        <span class="tag">Hospitality Analytics</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Airbnb-NYC-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Brand ML Prediction Engine</h3>
+                        <p class="project-description">
+                            Developed comprehensive ML solution predicting used car prices across 9 brands using advanced regression models and automated evaluation procedures.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Built modular architecture with interactive web application enabling instant price estimates based on vehicle specifications.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Regression Models</span>
+                            <span class="tag">Web Development</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Multi-Brand-ML-Prediction-Engine/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Multi-Brand-ML-Prediction-Engine" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/')">
-                    <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
-                    <p class="project-description">Multi-model analysis (Linear Regression, Random Forest, Decision Tree) of hospitality revenue drivers, achieving 0.433 R² accuracy in weather-based forecasting using Python and scikit-learn.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Identified $2,500 daily revenue uplift from live music events and optimal scheduling strategies, with 3x higher weekend performance metrics.
+                <!-- Project 2: Airbnb NYC Market Analysis -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/airbnb-nyc-analysis.jpg" alt="Airbnb NYC Market Analysis" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Airbnb NYC Market Analysis</div>'">
                     </div>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Scikit-Learn</span>
-                        <span class="tag">Statistical Modeling</span>
-                        <span class="tag">Data Visualization</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Revenue-Analytics-for-Craft-Brewery" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/')">
-                    <h3 class="project-title">Retail Analytics & Business Insights</h3>
-                    <p class="project-description">Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Customer Analytics</span>
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Linear Programming</span>
-                        <span class="tag">EDA</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Retail-Analytics-Business-Insights" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
+                    <div class="project-content">
+                        <h3 class="project-title">Airbnb NYC Market Analysis: Post-Pandemic Insights</h3>
+                        <p class="project-description">
+                            Interactive Tableau dashboard analyzing 30,000+ NYC Airbnb listings across 218 neighborhoods. Features sentiment analysis, pricing optimization models, and host performance benchmarking.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Identified key pricing strategies that increase host revenue by 15-25% and mapped high-demand neighborhoods for investment targeting.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Interactive Dashboard</span>
+                            <span class="tag">Tableau Public</span>
+                            <span class="tag">Business Intelligence</span>
+                            <span class="tag">Market Research</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Airbnb-NYC-Market-Analysis/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Airbnb-NYC-Market-Analysis" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/')">
-                    <h3 class="project-title">Boston Housing Market Analysis</h3>
-                    <p class="project-description">Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
+                <!-- Project 3: Revenue Analytics for Craft Brewery -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/craft-brewery-analytics.jpg" alt="Revenue Analytics for Craft Brewery" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Revenue Analytics for Craft Brewery</div>'">
                     </div>
-                    <div class="project-tags">
-                        <span class="tag">Market Research</span>
-                        <span class="tag">Statistical Modeling</span>
-                        <span class="tag">VIF Analysis</span>
-                        <span class="tag">Data Visualization</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Boston-Housing-Market-Analysis" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/')">
-                    <h3 class="project-title">Healthcare Risk Assessment</h3>
-                    <p class="project-description">Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Healthcare Analytics</span>
-                        <span class="tag">Risk Modeling</span>
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Feature Engineering</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Healthcare-Risk-Assessment" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
+                    <div class="project-content">
+                        <h3 class="project-title">Revenue Analytics for Craft Brewery</h3>
+                        <p class="project-description">
+                            Multi-model analysis (Linear Regression, Random Forest, Decision Tree) of hospitality revenue drivers, achieving 0.433 R² accuracy in weather-based forecasting using Python and scikit-learn.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Identified $2,500 daily revenue uplift from live music events and optimal scheduling strategies with 3x higher weekend performance metrics.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Statistical Modeling</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Revenue-Analytics-for-Craft-Brewery/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Revenue-Analytics-for-Craft-Brewery" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Player-Performance-Prediction/')">
-                    <h3 class="project-title">Player Performance Prediction</h3>
-                    <p class="project-description">Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Developed interactive Tableau dashboards enabling coaches and analysts to make data-driven decisions for player evaluation and game strategy.
+                <!-- Project 4: Retail Analytics & Business Insights -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/retail-analytics.jpg" alt="Retail Analytics & Business Insights" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Retail Analytics & Business Insights</div>'">
                     </div>
-                    <div class="project-tags">
-                        <span class="tag">Sports Analytics</span>
-                        <span class="tag">Performance Prediction</span>
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Random Forest</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Player-Performance-Prediction/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Player-Performance-Prediction" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
+                    <div class="project-content">
+                        <h3 class="project-title">Retail Analytics & Business Insights</h3>
+                        <p class="project-description">
+                            Analyzed customer and transaction data from large US retailer using advanced analytics to uncover trends in customer behavior and inventory demand.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Built regression models for sales prediction and developed interactive PowerBI dashboards for strategic decision-making.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Customer Analytics</span>
+                            <span class="tag">PowerBI</span>
+                            <span class="tag">Linear Programming</span>
+                            <span class="tag">EDA</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Retail-Analytics-Business-Insights" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProject('https://vijayatheli1709.github.io/Database-Design-Integration/')">
-                    <h3 class="project-title">Database Design & Integration</h3>
-                    <p class="project-description">Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.</p>
-                    <div class="project-impact">
-                        <strong>Business Value:</strong> Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
+                <!-- Project 5: Boston Housing Market Analysis -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/boston-housing-analysis.jpg" alt="Boston Housing Market Analysis" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Boston Housing Market Analysis</div>'">
                     </div>
-                    <div class="project-tags">
-                        <span class="tag">Database Design</span>
-                        <span class="tag">Google AppSheet</span>
-                        <span class="tag">Data Integration</span>
-                        <span class="tag">System Architecture</span>
+                    <div class="project-content">
+                        <h3 class="project-title">Boston Housing Market Analysis</h3>
+                        <p class="project-description">
+                            Analyzed relationship between student density and housing price fluctuations using advanced statistical modeling and multicollinearity analysis.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Uncovered key correlations affecting $2.5B+ market segment with actionable insights for real estate investment strategies.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Market Research</span>
+                            <span class="tag">Statistical Modeling</span>
+                            <span class="tag">VIF Analysis</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Boston-Housing-Market-Analysis/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Boston-Housing-Market-Analysis" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-actions">
-                        <a href="https://vijayatheli1709.github.io/Database-Design-Integration/" class="action-btn demo-btn" onclick="event.stopPropagation()">
-                            View Analysis
-                        </a>
-                        <a href="https://github.com/vijayatheli1709/Database-Design-Integration" class="action-btn code-btn" onclick="event.stopPropagation()">
-                            GitHub
-                        </a>
+                </div>
+
+                <!-- Project 6: Healthcare Risk Assessment -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/healthcare-risk-assessment.jpg" alt="Healthcare Risk Assessment" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Healthcare Risk Assessment</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Healthcare Risk Assessment</h3>
+                        <p class="project-description">
+                            Developed ML models for patient outcome prediction and credit risk assessment, achieving 89% AUC in patient risk prediction and 85% accuracy in loan default prediction.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Enabled proactive patient care through predictive analytics and improved lending decisions through risk modeling.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Healthcare Analytics</span>
+                            <span class="tag">Risk Modeling</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">Feature Engineering</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Healthcare-Risk-Assessment/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Healthcare-Risk-Assessment" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Player Performance Prediction -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/player-performance-prediction.jpg" alt="Player Performance Prediction" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Player Performance Prediction</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Player Performance Prediction</h3>
+                        <p class="project-description">
+                            Analyzed historical player performance data to predict future performance metrics, achieving 80% accuracy in forecasting points scored for strategic game planning.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Developed interactive Tableau dashboards enabling coaches to make data-driven decisions for player evaluation and game strategy.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Sports Analytics</span>
+                            <span class="tag">Performance Prediction</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Random Forest</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Player-Performance-Prediction/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Player-Performance-Prediction" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Database Design & Integration -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/database-design-integration.jpg" alt="Database Design & Integration" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'padding: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-weight: 600;\'>Database Design & Integration</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Database Design & Integration</h3>
+                        <p class="project-description">
+                            Designed centralized database system for educational institutes managing student enrollment and campaign data with offline synchronization capabilities.
+                        </p>
+                        <div class="project-impact">
+                            <div class="project-impact-label">Business Impact:</div>
+                            <div class="project-impact-text">
+                                Improved decision-making efficiency through dynamic views and real-time reporting, optimized for field representatives with limited connectivity.
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Database Design</span>
+                            <span class="tag">Google AppSheet</span>
+                            <span class="tag">Data Integration</span>
+                            <span class="tag">System Architecture</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://vijayatheli1709.github.io/Database-Design-Integration/" class="action-btn view-analysis-btn" target="_blank">
+                                View Analysis
+                            </a>
+                            <a href="https://github.com/vijayatheli1709/Database-Design-Integration" class="action-btn github-btn" target="_blank">
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -1552,10 +1730,22 @@
     </footer>
 
     <script>
-        // Project functionality
-        function openProject(url) {
-            window.open(url, '_blank');
-        }
+        // Add hover effects and interactions
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.03)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                this.style.boxShadow = 'none';
+            });
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1585,7 +1775,7 @@
 
         // Animate elements on scroll
         const observerOptions = {
-            threshold: 0.3,
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -1598,12 +1788,33 @@
             });
         }, observerOptions);
 
+        // Observe project cards for animation
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.transform = 'translateY(30px)';
+            card.style.opacity = '0';
+            card.style.transition = 'all 0.8s ease';
+            observer.observe(card);
+        });
+
         // Observe elements for animation
-        document.querySelectorAll('.timeline-entry, .project-card, .skill-category, .award-card').forEach(el => {
+        document.querySelectorAll('.timeline-entry, .skill-category, .award-card').forEach(el => {
             el.style.transform = 'translateY(30px)';
             el.style.opacity = '0';
             el.style.transition = 'all 0.8s ease';
             observer.observe(el);
+        });
+
+        // Tag hover effects
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.15)';
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.transform = 'translateY(0)';
+            });
         });
 
         // Professional Recognition Carousel functionality
