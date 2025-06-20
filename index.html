@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vijay Chandra Atheli | Strategic Analytics Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -57,16 +58,40 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            letter-spacing: 3px;
+            position: relative;
+            cursor: pointer;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+
+        .logo::before {
+            content: 'VCA';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcd3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-shadow: none;
+        }
+
+        .logo:hover::before {
+            opacity: 1;
         }
 
         .logo:hover {
-            text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(-2deg);
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.3);
         }
 
         /* Progress Indicator */
@@ -330,6 +355,48 @@
         .hero-subtitle {
             font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        .hero-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .hero-description p {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin: 1.5rem 0 2rem 0;
+            padding: 0;
+        }
+
+        .hero-bullets li {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .hero-bullets li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            top: 0.1rem;
+        }
+
+        .hero-closing {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.7;
             margin-bottom: 3rem;
         }
 
@@ -1332,7 +1399,7 @@
             }
 
             .logo {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
 
             .header {
@@ -1352,6 +1419,18 @@
             .awards-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+
+            .hero-description {
+                text-align: left;
+            }
+
+            .hero-bullets {
+                text-align: left;
+            }
+
+            .hero-closing {
+                text-align: left;
             }
         }
 
@@ -1382,7 +1461,7 @@
     <!-- Enhanced Navigation -->
     <header class="header" id="header">
         <nav class="nav container">
-            <div class="logo">Vijay Chandra Atheli</div>
+            <div class="logo">VCA</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#journey" class="nav-link">Journey</a></li>
@@ -1436,11 +1515,26 @@
                 </div>
                 <div class="hero-text">
                     <h1>Vijay Chandra Atheli</h1>
-                    <p class="hero-quote">"Every challenge is an opportunity to grow stronger"</p>
-                    <p class="hero-subtitle">Strategic Analytics Consultant • Salesforce Expert • 10 Active Certifications</p>
-                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 3rem; line-height: 1.8;">
-                        I'm a <span class="highlight">strategic analytics consultant</span> with deep expertise in transforming complex business challenges into data-driven solutions. My experience spans from engineering Salesforce CRM optimizations at Deloitte to developing predictive models that drive strategic decision-making.
-                    </p>
+                    <p class="hero-quote">"I believe every challenge is an opportunity to grow stronger"</p>
+                    <p class="hero-subtitle">Data Strategist • CRM Specialist • 10x Certified</p>
+                    
+                    <div class="hero-description">
+                        <p>I'm a Strategic Analytics Consultant and Salesforce Certified Professional with over 3 years of experience delivering data-driven solutions across enterprise ecosystems.</p>
+                        
+                        <p>With a foundation in business technology consulting at Deloitte, I specialize in transforming complex business workflows into intelligent, automated systems using tools like Salesforce (10x Certified), Tableau, Power BI, Python, and SQL.</p>
+                        
+                        <p><strong>My expertise spans:</strong></p>
+                        <ul class="hero-bullets">
+                            <li>Engineering Salesforce CRM solutions that reduce operational friction</li>
+                            <li>Building predictive models that inform strategic decision-making</li>
+                            <li>Designing data visualizations that uncover key business insights</li>
+                        </ul>
+                        
+                        <p>I'm currently pursuing my Master's in Business Analytics at Northeastern University, where I'm expanding my analytical skillset through machine learning, big data, and statistical modeling.</p>
+                        
+                        <p class="hero-closing">I thrive at the intersection of business strategy and technical execution — and I'm passionate about using data to tell meaningful stories, uncover patterns, and empower stakeholders to make smarter decisions.</p>
+                    </div>
+                    
                     <a href="#journey" class="cta-button">View Journey</a>
                     <a href="#projects" class="cta-button">See Projects</a>
                 </div>
