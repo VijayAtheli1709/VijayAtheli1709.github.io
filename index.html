@@ -1762,19 +1762,19 @@
                         <h3 class="highlights-title">A Few Highlights</h3>
                         <div class="highlights-grid">
                             <div class="highlight-item">
-                                <span class="highlight-number" data-count="3">0</span>
+                                <span class="highlight-number" data-count="3" data-show-plus="true">0</span>
                                 <div class="highlight-label">Years Industry Experience</div>
                             </div>
                             <div class="highlight-item">
-                                <span class="highlight-number" data-count="10">0</span>
+                                <span class="highlight-number" data-count="10" data-show-plus="false">0</span>
                                 <div class="highlight-label">Salesforce Certifications</div>
                             </div>
                             <div class="highlight-item">
-                                <span class="highlight-number" data-count="10">0</span>
+                                <span class="highlight-number" data-count="10" data-show-plus="false">0</span>
                                 <div class="highlight-label">Business Analytics Projects</div>
                             </div>
                             <div class="highlight-item">
-                                <span class="highlight-number" data-count="220">0</span>
+                                <span class="highlight-number" data-count="220" data-show-plus="true">0</span>
                                 <div class="highlight-label">Badges, Salesforce Double Star Ranger</div>
                             </div>
                         </div>
@@ -2589,13 +2589,14 @@
             
             highlightNumbers.forEach(number => {
                 const targetCount = parseInt(number.getAttribute('data-count'));
+                const showPlus = number.getAttribute('data-show-plus') === 'true';
                 let currentCount = 0;
                 const increment = targetCount / 30; // Animation duration control
                 
                 const timer = setInterval(() => {
                     currentCount += increment;
                     if (currentCount >= targetCount) {
-                        number.textContent = targetCount + '+';
+                        number.textContent = showPlus ? targetCount + '+' : targetCount;
                         clearInterval(timer);
                         number.classList.add('animate');
                     } else {
