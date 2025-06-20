@@ -345,13 +345,15 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 5rem;
-            align-items: center;
+            align-items: flex-start;
             text-align: left;
         }
 
         .hero-photo {
             text-align: center;
             position: relative;
+            align-self: start;
+            margin-top: 2rem;
         }
 
         .hero-photo img {
@@ -1398,6 +1400,11 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
                 text-align: center;
+            }
+
+            .hero-photo {
+                margin-top: 0;
+                order: -1;
             }
 
             .hero-photo img {
