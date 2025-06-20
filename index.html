@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vijay Chandra Atheli | Strategic Analytics Consultant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,8 +13,9 @@
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
             color: #ffffff;
             background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 25%, #0f0f23 50%, #1a1a1a 75%, #000000 100%);
             background-attachment: fixed;
@@ -58,15 +59,14 @@
         }
 
         .logo {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2.2rem;
-            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #ffffff;
             transition: all 0.4s ease;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
             position: relative;
             cursor: pointer;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
         }
 
         .logo::before {
@@ -82,7 +82,6 @@
             background-clip: text;
             opacity: 0;
             transition: opacity 0.4s ease;
-            text-shadow: none;
         }
 
         .logo:hover::before {
@@ -90,8 +89,7 @@
         }
 
         .logo:hover {
-            transform: scale(1.1) rotate(-2deg);
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.3);
+            transform: scale(1.05);
         }
 
         /* Progress Indicator */
@@ -99,11 +97,10 @@
             position: absolute;
             bottom: -1px;
             left: 0;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-            border-radius: 2px;
+            border-radius: 1px;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
         /* Navigation Links */
@@ -129,36 +126,22 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1rem;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
             display: block;
         }
 
         .nav-links a:hover {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
         }
 
         .nav-links a.active {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
             font-weight: 600;
-        }
-
-        .nav-links a.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 40px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Mobile Menu Toggle */
@@ -176,20 +159,19 @@
 
         .mobile-menu-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
         }
 
         .hamburger-line {
-            width: 25px;
-            height: 3px;
+            width: 20px;
+            height: 2px;
             background: rgba(255, 255, 255, 0.9);
-            margin: 3px 0;
+            margin: 2px 0;
             transition: all 0.3s ease;
-            border-radius: 2px;
+            border-radius: 1px;
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-4px, 4px);
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
@@ -197,7 +179,7 @@
         }
 
         .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-4px, -4px);
         }
 
         /* Mobile Navigation */
@@ -210,16 +192,16 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 1.5rem;
+            border-radius: 15px;
+            padding: 1rem;
             margin-top: 1rem;
             gap: 0;
-            min-width: 200px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            transform: translateY(-20px);
+            min-width: 180px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transform: translateY(-15px);
             opacity: 0;
             visibility: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .nav-links.mobile-menu.show {
@@ -229,66 +211,58 @@
         }
 
         .nav-links.mobile-menu a {
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            margin: 0.2rem 0;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin: 0.1rem 0;
             text-align: center;
-            border: 1px solid transparent;
-        }
-
-        .nav-links.mobile-menu a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(5px);
         }
 
         /* Section Progress Indicators */
         .section-progress {
             position: fixed;
-            right: 2rem;
+            right: 1.5rem;
             top: 50%;
             transform: translateY(-50%);
             z-index: 500;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .progress-dot {
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .progress-dot.active {
             background: rgba(255, 255, 255, 0.9);
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: scale(1.5);
             border-color: rgba(255, 255, 255, 0.6);
         }
 
         .progress-dot:hover {
             background: rgba(255, 255, 255, 0.6);
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
 
         .progress-dot::before {
             content: attr(data-section);
             position: absolute;
-            right: 25px;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(15px);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
             font-weight: 500;
             white-space: nowrap;
             opacity: 0;
@@ -300,21 +274,20 @@
         .progress-dot:hover::before {
             opacity: 1;
             visibility: visible;
-            transform: translateY(-50%) translateX(-5px);
+            transform: translateY(-50%) translateX(-3px);
         }
 
         /* Hero Section */
         .hero {
-            padding: 140px 0 100px;
+            padding: 120px 0 80px;
             text-align: center;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
             position: relative;
         }
 
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 5rem;
+            gap: 4rem;
             align-items: center;
             text-align: left;
         }
@@ -324,63 +297,62 @@
         }
 
         .hero-photo img {
-            width: 320px;
-            height: 320px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
         .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
             background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
         }
 
         .hero-quote {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             font-weight: 300;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .hero-description {
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .hero-description p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero-bullets {
             list-style: none;
-            margin: 1.5rem 0 2rem 0;
+            margin: 1rem 0 1.5rem 0;
             padding: 0;
         }
 
         .hero-bullets li {
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            padding-left: 1rem;
             position: relative;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         .hero-bullets li::before {
@@ -388,16 +360,16 @@
             position: absolute;
             left: 0;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             top: 0.1rem;
         }
 
         .hero-closing {
             font-style: italic;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
         .cta-button {
@@ -406,13 +378,14 @@
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             color: white;
-            padding: 18px 36px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            font-weight: 600;
-            margin: 0 0.8rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin: 0 0.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -425,7 +398,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s ease;
+            transition: left 0.5s ease;
         }
 
         .cta-button:hover::before {
@@ -435,13 +408,12 @@
         .cta-button:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
         }
 
         /* Sections */
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
@@ -458,9 +430,9 @@
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
             background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -469,8 +441,8 @@
 
         .section-subtitle {
             text-align: center;
-            margin-bottom: 4rem;
-            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             margin-left: auto;
@@ -479,26 +451,26 @@
 
         .highlight {
             background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-            padding: 0.3rem 0.6rem;
-            border-radius: 8px;
-            font-weight: 700;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
             color: #ffffff;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* ===== ENHANCED JOURNEY SECTION STYLES ===== */
+        /* Journey Section Styles */
         
         /* Toggle Buttons */
         .journey-toggle {
             display: flex;
             justify-content: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             gap: 0;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            border-radius: 50px;
-            padding: 8px;
+            border-radius: 30px;
+            padding: 6px;
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
@@ -509,10 +481,10 @@
             background: transparent;
             color: rgba(255, 255, 255, 0.7);
             border: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
@@ -521,7 +493,6 @@
         .toggle-btn.active {
             background: rgba(255, 255, 255, 0.15);
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
         }
 
         .toggle-btn:hover:not(.active) {
@@ -532,9 +503,9 @@
         /* Journey Grid */
         .journey-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .journey-card {
@@ -542,9 +513,9 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -555,45 +526,43 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
 
         .journey-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         /* Company Header */
         .company-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .company-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
             color: white;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .company-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(1.1);
         }
 
         .company-logo.risepoint {
@@ -617,14 +586,14 @@
         }
 
         .company-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.25rem;
+            font-weight: 600;
             color: #ffffff;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.25rem;
         }
 
         .company-info .role {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: rgba(255, 255, 255, 0.8);
             font-weight: 500;
         }
@@ -634,23 +603,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .location {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .date {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 500;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -658,33 +627,33 @@
         /* Description */
         .description {
             color: rgba(255, 255, 255, 0.85);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
         /* Skills */
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
         .skill-tag {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
         .skill-tag:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             color: #ffffff;
         }
 
@@ -701,27 +670,27 @@
         /* Award Badge */
         .award-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 0.75rem;
+            right: 0.75rem;
             background: linear-gradient(135deg, #FFD700, #FFA500);
             color: #000;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         /* Animation for content switching */
         .journey-content {
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.4s ease-in;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(15px);
             }
             to {
                 opacity: 1;
@@ -729,12 +698,12 @@
             }
         }
 
-        /* UPDATED PROJECTS GRID - 3 COLUMNS */
+        /* PROJECTS GRID - 3 COLUMNS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .project-card {
@@ -742,9 +711,9 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
         }
@@ -755,26 +724,25 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
         }
 
         .project-image {
             width: 100%;
-            height: 180px;
+            height: 140px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
+            font-size: 0.9rem;
             position: relative;
             overflow: hidden;
         }
@@ -791,101 +759,90 @@
         }
 
         .project-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .project-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
             color: #ffffff;
             line-height: 1.3;
         }
 
         .project-description {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            margin-bottom: 1rem;
+            line-height: 1.6;
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .project-impact {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            padding: 1rem;
-            border-radius: 12px;
-            margin: 1.2rem 0;
-            border-left: 3px solid rgba(255, 255, 255, 0.4);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 2px solid rgba(255, 255, 255, 0.4);
             position: relative;
         }
 
-        .project-impact::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 4px;
-            height: calc(100% + 2px);
-            background: linear-gradient(180deg, rgba(80, 84, 95, 0.8), rgba(60, 64, 75, 0.6));
-            border-radius: 2px;
-        }
-
         .project-impact-label {
-            font-weight: 700;
+            font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
         }
 
         .project-impact-text {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
-            line-height: 1.5;
+            font-size: 0.8rem;
+            line-height: 1.4;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1.2rem 0;
+            gap: 0.4rem;
+            margin: 1rem 0;
         }
 
         .tag {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: rgba(255, 255, 255, 0.9);
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
         .tag:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .project-actions {
             display: flex;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
+            gap: 0.6rem;
+            margin-top: 1rem;
         }
 
         .action-btn {
             flex: 1;
-            padding: 0.7rem 1.2rem;
+            padding: 0.6rem 1rem;
             border: none;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             font-family: inherit;
             position: relative;
             overflow: hidden;
@@ -895,7 +852,6 @@
             background: rgba(60, 64, 75, 0.9);
             color: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(80, 84, 95, 0.6);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .view-analysis-btn::before {
@@ -906,7 +862,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s ease;
+            transition: left 0.5s ease;
         }
 
         .view-analysis-btn:hover::before {
@@ -914,10 +870,9 @@
         }
 
         .view-analysis-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             background: rgba(70, 74, 85, 0.95);
             border-color: rgba(90, 94, 105, 0.8);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             color: #ffffff;
         }
 
@@ -925,23 +880,21 @@
             background: rgba(60, 64, 75, 0.9);
             color: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(80, 84, 95, 0.6);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .github-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             background: rgba(70, 74, 85, 0.95);
             border-color: rgba(90, 94, 105, 0.8);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             color: #ffffff;
         }
 
         /* Certifications Grid */
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .certification-card {
@@ -949,10 +902,10 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 15px;
+            padding: 2rem;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -963,21 +916,20 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
 
         .certification-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         .certification-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -987,10 +939,9 @@
         }
 
         .certification-icon img {
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             object-fit: contain;
-            filter: brightness(0.9);
         }
 
         .certification-card:hover .certification-icon {
@@ -999,23 +950,23 @@
         }
 
         .certification-name {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1rem;
+            font-weight: 600;
             color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .certification-provider {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .certification-date {
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.8);
             display: inline-block;
         }
@@ -1023,9 +974,9 @@
         /* Professional Recognition Styles */
         .awards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .award-card {
@@ -1033,30 +984,29 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 15px;
+            padding: 2.5rem;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .award-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
         .recommendations-carousel {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: 15px;
         }
 
         .recommendations-container {
             display: flex;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
         .recommendation-card {
@@ -1065,8 +1015,8 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 15px;
+            padding: 2.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -1074,12 +1024,12 @@
         .recommender-info {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .recommender-avatar {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -1089,40 +1039,40 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            margin-right: 1.5rem;
+            margin-right: 1rem;
             transition: all 0.3s ease;
         }
 
         .recommender-details h4 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
         }
 
         .recommender-details p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.4;
         }
 
         .recommendation-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: rgba(255, 255, 255, 0.9);
             font-style: italic;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 1rem;
         }
 
         .carousel-controls {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 3rem;
-            gap: 1.5rem;
+            margin-top: 2rem;
+            gap: 1rem;
         }
 
         .carousel-btn {
@@ -1131,10 +1081,10 @@
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            width: 55px;
-            height: 55px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -1143,12 +1093,12 @@
 
         .carousel-dots {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
         .dot {
-            width: 14px;
-            height: 14px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
@@ -1163,9 +1113,9 @@
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .skill-category {
@@ -1173,9 +1123,9 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
-            transition: all 0.4s ease;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -1186,45 +1136,44 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
+            height: 2px;
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         .skill-category h3 {
             color: #ffffff;
-            margin-bottom: 2rem;
-            font-size: 1.4rem;
-            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
         .skill-item {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             color: rgba(255, 255, 255, 0.9);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
         .skill-item:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             color: #ffffff;
         }
 
@@ -1232,7 +1181,7 @@
         .contact {
             background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
             text-align: center;
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
@@ -1248,9 +1197,9 @@
         }
 
         .contact h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
             background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1258,26 +1207,27 @@
         }
 
         .contact p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .contact-link {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            padding: 18px 32px;
+            padding: 12px 24px;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            transition: all 0.4s ease;
-            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -1286,8 +1236,7 @@
         .contact-link:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
             color: #ffffff;
         }
 
@@ -1298,10 +1247,11 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.7);
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
+            font-size: 0.9rem;
         }
 
-        /* Mobile Responsiveness - Updated for enhanced navigation */
+        /* Mobile Responsiveness */
         @media (max-width: 1200px) {
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1315,12 +1265,17 @@
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2rem;
                 text-align: center;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+
+            .hero-photo img {
+                width: 200px;
+                height: 200px;
             }
 
             .journey-grid {
@@ -1329,13 +1284,13 @@
             }
 
             .journey-card {
-                padding: 2rem;
+                padding: 1.5rem;
             }
 
             .company-header {
                 flex-direction: column;
                 text-align: center;
-                gap: 1rem;
+                gap: 0.75rem;
             }
 
             .date-location {
@@ -1345,21 +1300,21 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .toggle-btn {
-                padding: 10px 18px;
-                font-size: 0.9rem;
+                padding: 6px 16px;
+                font-size: 0.85rem;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .project-content {
-                padding: 2rem;
+                padding: 1.5rem;
             }
 
             .project-actions {
@@ -1399,11 +1354,11 @@
             }
 
             .logo {
-                font-size: 1.4rem;
+                font-size: 1.25rem;
             }
 
             .header {
-                padding: 0.8rem 0;
+                padding: 0.75rem 0;
             }
 
             .recommender-info {
@@ -1432,28 +1387,44 @@
             .hero-closing {
                 text-align: left;
             }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .contact {
+                padding: 60px 0;
+            }
         }
 
-        /* Floating particles effect */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 300px 300px, 250px 250px, 400px 400px;
-            animation: float 20s ease-in-out infinite;
-            pointer-events: none;
-        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .project-content {
+                padding: 1.25rem;
+            }
+
+            .journey-card {
+                padding: 1.25rem;
+            }
+
+            .award-card {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -2059,41 +2030,41 @@
         <div class="container">
             <!-- Awards Section -->
             <h2 class="section-title">Professional Recognition</h2>
-            <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8);">
                 Recognized for excellence in technical delivery, strategic consulting, and client impact
             </p>
             
             <div class="awards-grid">
                 <div class="award-card">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.2));"></div>
-                    <div style="width: 80px; height: 80px; margin: 0 auto 2rem; background: rgba(255, 215, 0, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; color: rgba(255, 215, 0, 0.9);">A</div>
-                    <div style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; color: #ffffff;">Deloitte Applause Award</div>
-                    <div style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 0.5rem 1.2rem; border-radius: 20px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1);">October 2022</div>
-                    <div style="font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85);">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.2));"></div>
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1.5rem; background: rgba(255, 215, 0, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; color: rgba(255, 215, 0, 0.9);">A</div>
+                    <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; color: #ffffff;">Deloitte Applause Award</div>
+                    <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 0.4rem 1rem; border-radius: 15px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1);">October 2022</div>
+                    <div style="font-size: 0.9rem; line-height: 1.5; color: rgba(255, 255, 255, 0.85);">
                         Recognized for exceptional analytical ability, conceptual thinking, and communication skills in delivering complex client solutions.
                     </div>
                 </div>
                 
                 <div class="award-card">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, rgba(0, 191, 255, 0.8), rgba(0, 191, 255, 0.2));"></div>
-                    <div style="width: 80px; height: 80px; margin: 0 auto 2rem; background: rgba(0, 191, 255, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(0, 191, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; color: rgba(0, 191, 255, 0.9);">3x</div>
-                    <div style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; color: #ffffff;">Deloitte SPOT Awards</div>
-                    <div style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 0.5rem 1.2rem; border-radius: 20px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1);">May 2023 • Dec 2023 • May 2024</div>
-                    <div style="font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85);">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(0, 191, 255, 0.8), rgba(0, 191, 255, 0.2));"></div>
+                    <div style="width: 60px; height: 60px; margin: 0 auto 1.5rem; background: rgba(0, 191, 255, 0.1); backdrop-filter: blur(10px); border: 2px solid rgba(0, 191, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 600; color: rgba(0, 191, 255, 0.9);">3x</div>
+                    <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; color: #ffffff;">Deloitte SPOT Awards</div>
+                    <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 0.4rem 1rem; border-radius: 15px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.1);">May 2023 • Dec 2023 • May 2024</div>
+                    <div style="font-size: 0.9rem; line-height: 1.5; color: rgba(255, 255, 255, 0.85);">
                         Received three SPOT awards for outstanding technical contributions including Sales Planning POCs, Mission Possible team leadership, and Opportunity Trigger Refactoring.
                     </div>
                 </div>
             </div>
 
             <!-- Recommendations Section -->
-            <h3 style="text-align: center; font-size: 2.2rem; margin-bottom: 3rem; font-weight: 700; background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Industry Leader Endorsements</h3>
+            <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem; font-weight: 600; background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Industry Leader Endorsements</h3>
             
             <div class="recommendations-carousel">
                 <div class="recommendations-container" id="recommendationsContainer">
                     
                     <!-- Recommendation 1 -->
                     <div class="recommendation-card">
-                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
                         <div class="recommender-info">
                             <div class="recommender-avatar">SP</div>
                             <div>
@@ -2102,14 +2073,14 @@
                             </div>
                         </div>
                         <div class="recommendation-text">
-                            <div style="position: absolute; top: -0.5rem; left: 0; font-size: 3rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
+                            <div style="position: absolute; top: -0.4rem; left: 0; font-size: 2.5rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
                             Vijay's analytical skills are unmatched. He has a keen eye for detail and consistently delivered high-quality Salesforce Lightning components and Apex code. What sets Vijay apart is his passion for learning and growth. He continuously sought opportunities to enhance his skills, and his enthusiasm was contagious. He is a highly motivated individual with a strong drive for success.
                         </div>
                     </div>
 
                     <!-- Recommendation 2 -->
                     <div class="recommendation-card">
-                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
                         <div class="recommender-info">
                             <div class="recommender-avatar">VM</div>
                             <div>
@@ -2118,13 +2089,14 @@
                             </div>
                         </div>
                         <div class="recommendation-text">
-                            <div style="position: absolute; top: -0.5rem; left: 0; font-size: 3rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
+                            <div style="position: absolute; top: -0.4rem; left: 0; font-size: 2.5rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
                             I had the pleasure of managing Vijay for a significant duration, and his performance was outstanding. He consistently exceeded expectations, delivering high-quality work within tight deadlines. His strong analytical skills and attention to detail were invaluable to our team. Strongly endorse for future opportunities, highlighting dedication, technical expertise, and commitment to delivering impactful solutions.
                         </div>
                     </div>
+                    
                     <!-- Recommendation 3 -->
                     <div class="recommendation-card">
-                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
                         <div class="recommender-info">
                             <div class="recommender-avatar">HS</div>
                             <div>
@@ -2133,14 +2105,14 @@
                             </div>
                         </div>
                         <div class="recommendation-text">
-                            <div style="position: absolute; top: -0.5rem; left: 0; font-size: 3rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
+                            <div style="position: absolute; top: -0.4rem; left: 0; font-size: 2.5rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
                             Vijay has consistently demonstrated a strong blend of technical skills and consulting acumen. His work on Agency Teams segregation using Apex integration, Opportunity Trigger framework, and Sales Planning feature earned him multiple awards. His strong communication skills ensure that clients feel engaged and informed throughout the project lifecycle.
                         </div>
                     </div>
 
                     <!-- Recommendation 4 -->
                     <div class="recommendation-card">
-                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
                         <div class="recommender-info">
                             <div class="recommender-avatar">SH</div>
                             <div>
@@ -2149,14 +2121,14 @@
                             </div>
                         </div>
                         <div class="recommendation-text">
-                            <div style="position: absolute; top: -0.5rem; left: 0; font-size: 3rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
+                            <div style="position: absolute; top: -0.4rem; left: 0; font-size: 2.5rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
                             Vijay has shown rapid growth in achieving technical skills on Salesforce development. He has a keen interest in learning about new features and implementing them. His technical skills have led to significant project impact, earning multiple awards. His client-focused approach and strong communication skills provide successful outcomes to projects.
                         </div>
                     </div>
 
                     <!-- Recommendation 5 -->
                     <div class="recommendation-card">
-                        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));"></div>
                         <div class="recommender-info">
                             <div class="recommender-avatar">VT</div>
                             <div>
@@ -2165,7 +2137,7 @@
                             </div>
                         </div>
                         <div class="recommendation-text">
-                            <div style="position: absolute; top: -0.5rem; left: 0; font-size: 3rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
+                            <div style="position: absolute; top: -0.4rem; left: 0; font-size: 2.5rem; color: rgba(255, 255, 255, 0.2); line-height: 1;">"</div>
                             Vijay is a very professional and smart worker. He likes to get to the base of problems and try all possible outcomes, using the best of skills and ideas. His passion to solve problems and learning is commendable, and he also helps others, seniors as well as juniors, grow and learn more with his interesting ideas.
                         </div>
                     </div>
@@ -2185,7 +2157,7 @@
             </div>
 
             <!-- Read More Button -->
-            <div style="text-align: center; margin-top: 3rem;">
+            <div style="text-align: center; margin-top: 2rem;">
                 <a href="https://www.linkedin.com/in/vijay-chandra-atheli/details/recommendations/" target="_blank" class="cta-button">
                     Read Full Recommendations on LinkedIn
                 </a>
@@ -2308,86 +2280,6 @@
             event.target.classList.add('active');
         }
 
-        // Add hover effects for journey cards
-        document.querySelectorAll('.journey-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.background = 'rgba(255, 255, 255, 0.05)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.background = 'rgba(255, 255, 255, 0.03)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                this.style.boxShadow = 'none';
-            });
-        });
-
-        // Skill tag hover effects
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.15)';
-                this.style.transform = 'translateY(-2px)';
-                this.style.color = '#ffffff';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.1)';
-                this.style.transform = 'translateY(0)';
-                this.style.color = 'rgba(255, 255, 255, 0.9)';
-            });
-        });
-
-        // Add hover effects and interactions
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.background = 'rgba(255, 255, 255, 0.05)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.background = 'rgba(255, 255, 255, 0.03)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                this.style.boxShadow = 'none';
-            });
-        });
-
-        // Add hover effects for certification cards
-        document.querySelectorAll('.certification-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.background = 'rgba(255, 255, 255, 0.05)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.background = 'rgba(255, 255, 255, 0.03)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                this.style.boxShadow = 'none';
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
         // Enhanced Navigation Functionality
         const header = document.getElementById('header');
         const navProgress = document.getElementById('navProgress');
@@ -2441,14 +2333,16 @@
         }
 
         // Mobile Menu Toggle
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('show');
-        });
+        if(mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('show');
+            });
+        }
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (mobileMenuToggle && mobileMenu && !mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenuToggle.classList.remove('active');
                 mobileMenu.classList.remove('show');
             }
@@ -2466,8 +2360,10 @@
                     });
                     
                     // Close mobile menu after clicking
-                    mobileMenuToggle.classList.remove('active');
-                    mobileMenu.classList.remove('show');
+                    if(mobileMenuToggle && mobileMenu) {
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('show');
+                    }
                 }
             });
         });
@@ -2491,58 +2387,6 @@
         // Initial call to set active states
         updateNavigation();
 
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
-
-        // Observe project cards for animation
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.style.transform = 'translateY(30px)';
-            card.style.opacity = '0';
-            card.style.transition = 'all 0.8s ease';
-            observer.observe(card);
-        });
-
-        // Observe certification cards for animation
-        document.querySelectorAll('.certification-card').forEach(card => {
-            card.style.transform = 'translateY(30px)';
-            card.style.opacity = '0';
-            card.style.transition = 'all 0.8s ease';
-            observer.observe(card);
-        });
-
-        // Observe elements for animation
-        document.querySelectorAll('.journey-card, .skill-category, .award-card').forEach(el => {
-            el.style.transform = 'translateY(30px)';
-            el.style.opacity = '0';
-            el.style.transition = 'all 0.8s ease';
-            observer.observe(el);
-        });
-
-        // Tag hover effects
-        document.querySelectorAll('.tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.15)';
-                this.style.transform = 'translateY(-2px)';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.1)';
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
         // Professional Recognition Carousel functionality
         let currentSlide = 0;
         const totalSlides = 5;
@@ -2552,19 +2396,21 @@
         const nextBtn = document.getElementById('nextBtn');
 
         function updateCarousel() {
-            const translateX = -currentSlide * 100;
-            container.style.transform = `translateX(${translateX}%)`;
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.style.background = 'rgba(255, 255, 255, 0.8)';
-                    dot.style.transform = 'scale(1.2)';
-                } else {
-                    dot.style.background = 'rgba(255, 255, 255, 0.3)';
-                    dot.style.transform = 'scale(1)';
-                }
-            });
+            if(container) {
+                const translateX = -currentSlide * 100;
+                container.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.style.background = 'rgba(255, 255, 255, 0.8)';
+                        dot.style.transform = 'scale(1.2)';
+                    } else {
+                        dot.style.background = 'rgba(255, 255, 255, 0.3)';
+                        dot.style.transform = 'scale(1)';
+                    }
+                });
+            }
         }
 
         function nextSlide() {
@@ -2634,81 +2480,34 @@
             });
         }
 
-        // Award cards hover effects
-        document.querySelectorAll('.award-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.background = 'rgba(255, 255, 255, 0.08)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.4)';
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
+                }
             });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.background = 'rgba(255, 255, 255, 0.05)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                this.style.boxShadow = 'none';
-            });
+        }, observerOptions);
+
+        // Observe cards for animation
+        document.querySelectorAll('.project-card, .certification-card, .journey-card, .skill-category, .award-card').forEach(card => {
+            card.style.transform = 'translateY(20px)';
+            card.style.opacity = '0';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
         });
 
-        // Carousel button hover effects
-        document.querySelectorAll('.carousel-btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.15)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                this.style.transform = 'scale(1.1)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.1)';
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                this.style.transform = 'scale(1)';
-            });
-        });
-
-        // Animate cards on load
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.journey-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s ease';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 150);
-            });
+            updateNavigation();
+            updateCarousel();
         });
-
-        // Add particle animation effect
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '2px';
-            particle.style.height = '2px';
-            particle.style.background = 'rgba(255, 255, 255, 0.3)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.zIndex = '1';
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            const animation = particle.animate([
-                { transform: 'translateY(0px)', opacity: 1 },
-                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'linear'
-            });
-            
-            animation.onfinish = () => particle.remove();
-        }
-
-        // Create particles periodically
-        setInterval(createParticle, 300);
     </script>
 </body>
 </html>
