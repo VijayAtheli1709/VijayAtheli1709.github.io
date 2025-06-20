@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vijay Chandra Atheli | Strategic Analytics Consultant</title>
     <!-- Modern Typography: Inter (body) + Space Grotesk (headings) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     <!-- AOS Animation Library -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
@@ -349,9 +349,19 @@
             text-align: left;
         }
 
+        /* Enhanced Hero Photo Section */
         .hero-photo {
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
         .hero-photo img {
@@ -368,6 +378,151 @@
             transform: scale(1.02);
             border-color: rgba(96, 165, 250, 0.5);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Personal Tagline */
+        .personal-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+        }
+
+        /* Floating Metric Highlights */
+        .floating-metrics {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .metric-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 15px;
+            padding: 0.8rem 1.2rem;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInFloat 1s ease forwards;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 15px 35px rgba(96, 165, 250, 0.3);
+        }
+
+        .metric-card.top-right {
+            top: -10px;
+            right: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .metric-card.top-left {
+            top: 30px;
+            left: -30px;
+            animation-delay: 0.7s;
+        }
+
+        .metric-card.bottom-right {
+            bottom: 30px;
+            right: -40px;
+            animation-delay: 0.9s;
+        }
+
+        .metric-card.bottom-left {
+            bottom: -10px;
+            left: -20px;
+            animation-delay: 1.1s;
+        }
+
+        @keyframes fadeInFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tech Stack Icons */
+        .tech-stack-container {
+            position: absolute;
+            bottom: -30px;
+            right: -50px;
+            display: flex;
+            gap: 0.8rem;
+            transform: rotate(-15deg);
+        }
+
+        .tech-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: techIconFloat 1s ease forwards;
+            cursor: pointer;
+        }
+
+        .tech-icon:nth-child(1) { animation-delay: 1.2s; }
+        .tech-icon:nth-child(2) { animation-delay: 1.4s; }
+        .tech-icon:nth-child(3) { animation-delay: 1.6s; }
+        .tech-icon:nth-child(4) { animation-delay: 1.8s; }
+        .tech-icon:nth-child(5) { animation-delay: 2.0s; }
+
+        .tech-icon:hover {
+            transform: scale(1.2) rotate(15deg);
+            border-color: rgba(96, 165, 250, 0.6);
+            background: rgba(96, 165, 250, 0.1);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+        }
+
+        .tech-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover svg {
+            fill: rgba(96, 165, 250, 0.9);
+        }
+
+        @keyframes techIconFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .hero-text h1 {
@@ -1405,6 +1560,49 @@
                 height: 220px;
             }
 
+            /* Mobile Floating Metrics */
+            .metric-card {
+                font-size: 0.75rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .metric-card.top-right {
+                top: -5px;
+                right: -10px;
+            }
+
+            .metric-card.top-left {
+                top: 15px;
+                left: -15px;
+            }
+
+            .metric-card.bottom-right {
+                bottom: 15px;
+                right: -20px;
+            }
+
+            .metric-card.bottom-left {
+                bottom: -5px;
+                left: -10px;
+            }
+
+            /* Mobile Tech Stack */
+            .tech-stack-container {
+                bottom: -20px;
+                right: -30px;
+                gap: 0.5rem;
+            }
+
+            .tech-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .tech-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
             .journey-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1509,6 +1707,19 @@
                 padding: 0 15px;
             }
 
+            .hero-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .floating-metrics {
+                transform: scale(0.85);
+            }
+
+            .tech-stack-container {
+                transform: rotate(-15deg) scale(0.8);
+            }
+
             .project-content {
                 padding: 1.25rem;
             }
@@ -1588,7 +1799,59 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-photo" data-aos="fade-right" data-aos-duration="800">
-                    <img src="assets/Profile-photo.jpg" alt="Vijay Chandra Atheli">
+                    <div class="profile-image-wrapper">
+                        <img src="assets/Profile-photo.jpg" alt="Vijay Chandra Atheli">
+                        
+                        <!-- Floating Metric Highlights -->
+                        <div class="floating-metrics">
+                            <div class="metric-card top-right" data-aos="fade-up" data-aos-delay="1000">
+                                10x Salesforce Certified
+                            </div>
+                            <div class="metric-card top-left" data-aos="fade-up" data-aos-delay="1200">
+                                100+ Salesforce Solutions Built
+                            </div>
+                            <div class="metric-card bottom-right" data-aos="fade-up" data-aos-delay="1400">
+                                3+ Years at Deloitte
+                            </div>
+                            <div class="metric-card bottom-left" data-aos="fade-up" data-aos-delay="1600">
+                                8+ Data Projects Delivered
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Icons -->
+                        <div class="tech-stack-container">
+                            <div class="tech-icon" title="Salesforce">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.042-3.441.219-.937 1.404-5.957 1.404-5.957s-.358-.719-.358-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.767 1.518 1.688 0 1.029-.653 2.567-.99 3.992-.281 1.191.597 2.161 1.774 2.161 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-icon" title="Tableau">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M11.654 0v2.417H9.237v1.417h2.417v2.417h1.417V3.834h2.417V2.417h-2.417V0h-1.417zm7.712 2.833v1.417h-2.417v.709h2.417v1.417h.709v-1.417H22.5v-.709h-2.417V2.833h-.709zM1.875 2.833v1.417h2.417v.709H1.875v1.417h.709v-1.417H5v-.709H2.584V2.833h-.709zM19.366 5.5v7.083h-2.125V14h2.125v2.125h.709V14H22.5v-1.417h-2.417V5.5h-.709zm-14.732 0v7.083H2.509V14h2.125v2.125h.709V14H7.5v-1.417H5.343V5.5h-.709zM7.071 7.333v2.125H4.946v.709h2.125v2.125h.709v-2.125h2.125v-.709H7.78V7.333h-.709zm9.858 0v2.125h-2.125v.709h2.125v2.125h.709v-2.125h2.125v-.709h-2.125V7.333h-.709zM11.654 9.5v7.083H9.237V18h2.417v2.5h1.417V18h2.417v-1.417h-2.417V9.5h-1.417zm7.712 2.833v1.417h-2.417v.709h2.417v1.417h.709v-1.417H22.5v-.709h-2.417v-1.417h-.709zm-14.732 0v1.417h2.417v.709H4.634v1.417h.709v-1.417H7.5v-.709H5.343v-1.417h-.709zm7.08 7.5v2.5H9.237v1.417h2.417V24h1.417v-2.417h2.417v-1.417h-2.417v-2.5h-1.417z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-icon" title="Python">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zM21.1 6.11l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08-.33.23z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-icon" title="Power BI">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15.94 5.44V21.6h3.32V5.44zM19.26 0v21.6H22V0zM12.6 7.72v13.88h3.34V7.72zM9.26 10.12v11.48h3.34V10.12zM5.94 12.48v9.12h3.32v-9.12zM2.62 15.04v6.56h3.32v-6.56z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-icon" title="SQL">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.18-.038-.048-.087-.08-.112-.134-.01-.026-.01-.04-.01-.067zm7.56 7.936c-.06-.063-.12-.09-.19-.09-.08 0-.16.03-.22.09-.07.07-.11.16-.11.26s.04.19.11.26c.06.06.14.09.22.09.07 0 .13-.03.19-.09.06-.07.1-.16.1-.26s-.04-.19-.1-.26zm-.85-.52c-.15 0-.3.06-.41.17-.11.11-.17.26-.17.41s.06.3.17.41c.11.11.26.17.41.17s.3-.06.41-.17c.11-.11.17-.26.17-.41s-.06-.3-.17-.41c-.11-.11-.26-.17-.41-.17zm-.49.63c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08s.13.03.18.08c.05.05.08.11.08.18s-.03.13-.08.18c-.05.05-.11.08-.18.08s-.13-.03-.18-.08c-.05-.05-.08-.11-.08-.18zm1.42-1.21c-.04 0-.08.01-.11.03-.04.02-.07.05-.09.09l-.21.45c-.02.04-.02.09 0 .13.01.04.04.07.08.09.04.02.09.02.13 0 .04-.01.07-.04.09-.08l.21-.45c.02-.04.02-.09 0-.13-.01-.04-.04-.07-.08-.09-.02-.01-.04-.03-.11-.03zm.15.96c-.04 0-.08.01-.11.03-.04.02-.07.05-.09.09l-.21.45c-.02.04-.02.09 0 .13.01.04.04.07.08.09.04.02.09.02.13 0 .04-.01.07-.04.09-.08l.21-.45c.02-.04.02-.09 0-.13-.01-.04-.04-.07-.08-.09-.03-.01-.05-.03-.12-.03zm-1.7-2.84c-.26 0-.52.1-.71.29-.19.19-.29.45-.29.71s.1.52.29.71c.19.19.45.29.71.29s.52-.1.71-.29c.19-.19.29-.45.29-.71s-.1-.52-.29-.71c-.19-.19-.45-.29-.71-.29zm0 1.51c-.14 0-.27-.06-.37-.16-.1-.1-.16-.23-.16-.37s.06-.27.16-.37c.1-.1.23-.16.37-.16s.27.06.37.16c.1.1.16.23.16.37s-.06.27-.16.37c-.1.1-.23.16-.37.16zm1.31-2.38c-.03 0-.06.01-.08.02-.03.01-.05.03-.07.05l-.32.32c-.03.03-.04.07-.04.11s.01.08.04.11c.02.03.05.05.08.06.03.01.07.01.1 0 .03-.01.06-.03.08-.06l.32-.32c.03-.03.04-.07.04-.11s-.01-.08-.04-.11c-.02-.02-.05-.04-.08-.05-.02-.01-.05-.02-.08-.02zm-1.07.68c-.03 0-.06.01-.08.02-.03.01-.05.03-.07.05l-.32.32c-.03.03-.04.07-.04.11s.01.08.04.11c.02.03.05.05.08.06.03.01.07.01.1 0 .03-.01.06-.03.08-.06l.32-.32c.03-.03.04-.07.04-.11s-.01-.08-.04-.11c-.02-.02-.05-.04-.08-.05-.02-.01-.05-.02-.08-.02z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personal Tagline -->
+                    <div class="personal-tagline" data-aos="fade-up" data-aos-delay="900">
+                        Turning Data into Direction
+                    </div>
                 </div>
                 <div class="hero-text">
                     <h1 data-aos="fade-up" data-aos-delay="200">Vijay Chandra Atheli</h1>
