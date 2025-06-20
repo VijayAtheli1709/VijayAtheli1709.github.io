@@ -395,10 +395,10 @@
         /* Floating Metric Highlights */
         .floating-metrics {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: -60px;
+            left: -80px;
+            width: calc(100% + 160px);
+            height: calc(100% + 120px);
             pointer-events: none;
         }
 
@@ -408,47 +408,48 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(96, 165, 250, 0.3);
-            border-radius: 15px;
-            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            padding: 0.6rem 1rem;
             color: #ffffff;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             white-space: nowrap;
             box-shadow: 0 8px 25px rgba(96, 165, 250, 0.2);
             transition: all 0.3s ease;
             opacity: 0;
             animation: fadeInFloat 1s ease forwards;
+            pointer-events: auto;
         }
 
         .metric-card:hover {
-            transform: translateY(-5px);
-            background: rgba(96, 165, 250, 0.1);
-            border-color: rgba(96, 165, 250, 0.5);
-            box-shadow: 0 15px 35px rgba(96, 165, 250, 0.3);
+            transform: translateY(-3px);
+            background: rgba(96, 165, 250, 0.08);
+            border-color: rgba(96, 165, 250, 0.4);
+            box-shadow: 0 12px 28px rgba(96, 165, 250, 0.25);
         }
 
         .metric-card.top-right {
-            top: -10px;
-            right: -20px;
+            top: 20px;
+            right: 0px;
             animation-delay: 0.5s;
         }
 
         .metric-card.top-left {
-            top: 30px;
-            left: -30px;
+            top: 60px;
+            left: 0px;
             animation-delay: 0.7s;
         }
 
         .metric-card.bottom-right {
-            bottom: 30px;
-            right: -40px;
+            bottom: 60px;
+            right: 0px;
             animation-delay: 0.9s;
         }
 
         .metric-card.bottom-left {
-            bottom: -10px;
-            left: -20px;
+            bottom: 20px;
+            left: 0px;
             animation-delay: 1.1s;
         }
 
@@ -466,16 +467,16 @@
         /* Tech Stack Icons */
         .tech-stack-container {
             position: absolute;
-            bottom: -30px;
-            right: -50px;
+            bottom: -20px;
+            right: -60px;
             display: flex;
-            gap: 0.8rem;
-            transform: rotate(-15deg);
+            gap: 0.6rem;
+            transform: rotate(-10deg);
         }
 
         .tech-icon {
-            width: 45px;
-            height: 45px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
@@ -491,21 +492,21 @@
         }
 
         .tech-icon:nth-child(1) { animation-delay: 1.2s; }
-        .tech-icon:nth-child(2) { animation-delay: 1.4s; }
-        .tech-icon:nth-child(3) { animation-delay: 1.6s; }
-        .tech-icon:nth-child(4) { animation-delay: 1.8s; }
-        .tech-icon:nth-child(5) { animation-delay: 2.0s; }
+        .tech-icon:nth-child(2) { animation-delay: 1.3s; }
+        .tech-icon:nth-child(3) { animation-delay: 1.4s; }
+        .tech-icon:nth-child(4) { animation-delay: 1.5s; }
+        .tech-icon:nth-child(5) { animation-delay: 1.6s; }
 
         .tech-icon:hover {
-            transform: scale(1.2) rotate(15deg);
-            border-color: rgba(96, 165, 250, 0.6);
-            background: rgba(96, 165, 250, 0.1);
-            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+            transform: scale(1.15) rotate(10deg);
+            border-color: rgba(96, 165, 250, 0.5);
+            background: rgba(96, 165, 250, 0.08);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.25);
         }
 
         .tech-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             fill: rgba(255, 255, 255, 0.6);
             transition: all 0.3s ease;
         }
@@ -1562,45 +1563,46 @@
 
             /* Mobile Floating Metrics */
             .metric-card {
-                font-size: 0.75rem;
-                padding: 0.6rem 1rem;
+                font-size: 0.7rem;
+                padding: 0.5rem 0.8rem;
             }
 
             .metric-card.top-right {
-                top: -5px;
-                right: -10px;
+                top: 10px;
+                right: 5px;
             }
 
             .metric-card.top-left {
-                top: 15px;
-                left: -15px;
+                top: 40px;
+                left: 5px;
             }
 
             .metric-card.bottom-right {
-                bottom: 15px;
-                right: -20px;
+                bottom: 40px;
+                right: 5px;
             }
 
             .metric-card.bottom-left {
-                bottom: -5px;
-                left: -10px;
+                bottom: 10px;
+                left: 5px;
             }
 
             /* Mobile Tech Stack */
             .tech-stack-container {
-                bottom: -20px;
-                right: -30px;
-                gap: 0.5rem;
+                bottom: -15px;
+                right: -40px;
+                gap: 0.4rem;
+                transform: rotate(-8deg) scale(0.9);
             }
 
             .tech-icon {
-                width: 35px;
-                height: 35px;
+                width: 32px;
+                height: 32px;
             }
 
             .tech-icon svg {
-                width: 18px;
-                height: 18px;
+                width: 16px;
+                height: 16px;
             }
 
             .journey-grid {
