@@ -181,37 +181,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        /* Philosophy Sidebar */
-        .philosophy-sidebar {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            width: 250px;
-            z-index: 500;
-            transition: all 0.3s ease;
-        }
-
-        .philosophy-sidebar h4 {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .philosophy-sidebar p {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.4;
-            font-style: italic;
-        }
-
         /* Sections */
         .section {
             padding: 100px 0;
@@ -232,9 +201,9 @@
         .section-title {
             text-align: center;
             font-size: 3rem;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -250,67 +219,68 @@
             margin-right: auto;
         }
 
-        /* Timeline Styles - Visual Timeline */
-        .visual-timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 0;
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #ffffff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .timeline-track {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
-            transform: translateX(-50%);
-        }
-
-        .timeline-entry {
+        /* ===== ENHANCED JOURNEY SECTION STYLES ===== */
+        
+        /* Toggle Buttons */
+        .journey-toggle {
             display: flex;
-            align-items: center;
-            margin: 4rem 0;
-            position: relative;
-        }
-
-        .timeline-entry:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-entry:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-node {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            background: #ffffff;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-entry:hover .timeline-node {
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .timeline-content-wrapper {
-            width: 45%;
-            position: relative;
-        }
-
-        .timeline-content {
+            justify-content: center;
+            margin-bottom: 4rem;
+            gap: 0;
             background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 8px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toggle-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .toggle-btn.active {
+            background: rgba(70, 130, 200, 0.8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(70, 130, 200, 0.3);
+        }
+
+        .toggle-btn:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Journey Grid */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .journey-card {
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -318,109 +288,187 @@
             padding: 2.5rem;
             transition: all 0.4s ease;
             position: relative;
+            overflow: hidden;
         }
 
-        .timeline-content::before {
+        .journey-card::before {
             content: '';
             position: absolute;
-            top: 50%;
-            width: 0;
-            height: 0;
-            border: 15px solid transparent;
-            transform: translateY(-50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
         }
 
-        .timeline-entry:nth-child(odd) .timeline-content::before {
-            right: -30px;
-            border-left-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-entry:nth-child(even) .timeline-content::before {
-            left: -30px;
-            border-right-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-content:hover {
-            background: rgba(255, 255, 255, 0.08);
+        .journey-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
-            transform: scale(1.02);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
-        .timeline-org-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #4A90E2, #357ABD);
+        /* Company Header */
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.1);
+        }
+
+        .company-logo.risepoint {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+        }
+
+        .company-logo.northeastern {
+            background: linear-gradient(135deg, #1E90FF, #4169E1);
+        }
+
+        .company-logo.fourblock {
+            background: linear-gradient(135deg, #32CD32, #228B22);
+        }
+
+        .company-logo.deloitte {
+            background: linear-gradient(135deg, #86BC25, #6B9619);
+        }
+
+        .company-logo.cbit {
+            background: linear-gradient(135deg, #FF6B6B, #E74C3C);
+        }
+
+        .company-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+        }
+
+        .company-info .role {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* Date and Location */
+        .date-location {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .location {
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
+        }
+
+        .date {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
             font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Description */
+        .description {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        /* Content sections */
+        .journey-content {
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .journey-content.hidden {
+            display: none;
+        }
+
+        /* Award Badge */
+        .award-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .timeline-org-badge.northeastern {
-            background: linear-gradient(135deg, #1E90FF, #4169E1);
+        /* Animation for content switching */
+        .journey-content {
+            animation: fadeIn 0.5s ease-in;
         }
 
-        .timeline-org-badge.risepoint {
-            background: linear-gradient(135deg, #FF6B35, #F7931E);
-        }
-
-        .timeline-org-badge.fourblock {
-            background: linear-gradient(135deg, #32CD32, #228B22);
-        }
-
-        .timeline-org-badge.deloitte {
-            background: linear-gradient(135deg, #86BC25, #6B9619);
-        }
-
-        .timeline-org-badge.cbit {
-            background: linear-gradient(135deg, #FF6B6B, #E74C3C);
-        }
-
-        .timeline-role {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-date {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-weight: 600;
-        }
-
-        .timeline-description {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .timeline-achievements {
-            list-style: none;
-        }
-
-        .timeline-achievements li {
-            margin: 0.8rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
-
-        .timeline-achievements li:before {
-            content: "•";
-            color: rgba(255, 255, 255, 0.6);
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.2rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* UPDATED PROJECTS GRID - 3 COLUMNS */
@@ -995,16 +1043,6 @@
             padding: 3rem 0;
         }
 
-        .highlight {
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-            padding: 0.3rem 0.6rem;
-            border-radius: 8px;
-            font-weight: 700;
-            color: #ffffff;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
         /* Mobile Responsiveness - Updated for 3-column grid */
         @media (max-width: 1200px) {
             .projects-grid {
@@ -1023,47 +1061,34 @@
                 font-size: 2.5rem;
             }
 
-            .visual-timeline {
-                padding: 1rem 0;
+            .journey-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            .timeline-track {
-                left: 20px;
-                transform: none;
+            .journey-card {
+                padding: 2rem;
             }
 
-            .timeline-entry {
-                flex-direction: column !important;
-                margin-left: 40px;
-                align-items: flex-start;
-            }
-
-            .timeline-content-wrapper {
-                width: 100%;
-            }
-
-            .timeline-node {
-                left: -50px;
-                transform: translateY(-50%);
-            }
-
-            .timeline-content::before {
-                display: none;
-            }
-
-            .timeline-org-badge {
-                font-size: 0.8rem;
-                padding: 0.4rem 1rem;
-            }
-
-            .timeline-role {
-                font-size: 1.2rem;
-            }
-
-            .timeline-location-date {
+            .company-header {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .date-location {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .toggle-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
             }
 
             .projects-grid {
@@ -1175,137 +1200,166 @@
         </div>
     </section>
 
-    <!-- Professional Journey Section (Combined Education & Experience) -->
+    <!-- Enhanced Professional Journey Section -->
     <section id="journey" class="section">
         <div class="container">
             <h2 class="section-title">Professional Journey</h2>
-            <p style="text-align: center; margin-bottom: 4rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">
-                From engineering foundations to strategic consulting - reflecting on my journey and accomplishments
+            <p class="section-subtitle">
+                From engineering foundations to strategic consulting - a journey of continuous growth and impact
             </p>
-            <div class="visual-timeline">
-                <div class="timeline-track"></div>
-                
-                <!-- Current Role - Risepoint -->
-                <div class="timeline-entry">
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-content">
-                            <div class="timeline-org-badge risepoint">Risepoint</div>
-                            <div class="timeline-role">Marketing & Operations Intern</div>
-                            <div class="timeline-location-date">
-                                <span>Boston, Massachusetts, United States • Remote</span>
-                                <span class="timeline-date">Jun 2025 - Present</span>
-                            </div>
-                            <p class="timeline-description">
-                                Strategic Consulting Role: Gaining comprehensive exposure to strategy work at an innovative EdTech company committed to making quality and affordable education more accessible.
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li>Conducted in-depth analysis to shape key strategic initiatives, utilizing data-driven insights from customer performance to internal operations</li>
-                                <li>Structured complex problems, developed hypotheses, and delivered value-added strategic recommendations to drive business growth and operational efficiency</li>
-                                <li>Collaborated with cross-functional teams (Marketing, Operations, Product, Revenue, Enrollment Services) to identify KPIs and provide insights on performance trends</li>
-                                <li>Supported business transformation initiatives, including process reengineering and change management strategies to optimize operating models</li>
-                                <li>Cultivated deep understanding of market ecosystem, including university partners and marketing channels</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-node"></div>
-                </div>
 
-                <!-- Current Education - Northeastern -->
-                <div class="timeline-entry">
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-content">
-                            <div class="timeline-org-badge northeastern">Northeastern University</div>
-                            <div class="timeline-role">Master of Science in Business Analytics</div>
-                            <div class="timeline-location-date">
-                                <span>Boston, Massachusetts, United States</span>
-                                <span class="timeline-date">Aug 2024 - Dec 2025</span>
-                            </div>
-                            <p class="timeline-description">
-                                D'Amore-McKim School of Business | D'Amore-McKim Achievers Scholarship Awardee
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li>Advanced coursework in Machine Learning, Statistical Modeling, Data Wrangling & Mining, and Business Analytics Strategy</li>
-                                <li>Specialized training in Big Data Analytics, Operations Management, Decision Modeling, and Monte Carlo simulations</li>
-                                <li><strong>Graduate Career Center Advisory Board Member (Jan 2025 - Present):</strong> Leading strategic planning and implementation of career development events for graduate students</li>
-                                <li>Providing actionable insights to enhance career-related initiatives, ensuring alignment with student needs and industry trends</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-node"></div>
-                </div>
-                
-                <!-- FourBlock Experience -->
-                <div class="timeline-entry">
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-content">
-                            <div class="timeline-org-badge fourblock">FourBlock</div>
-                            <div class="timeline-role">Analytics Intern</div>
-                            <div class="timeline-location-date">
-                                <span>Boston, Massachusetts, United States</span>
-                                <span class="timeline-date">Jan 2025 - Apr 2025</span>
-                            </div>
-                            <p class="timeline-description">
-                                Impact Analytics & Strategy: Conducted strategic analysis for veteran career readiness organization to evaluate program effectiveness and develop growth strategies.
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li>Developed master KPIs to evaluate program effectiveness and identify areas for process improvement</li>
-                                <li>Validated and analyzed Salesforce alumni data to measure program impact using SQL, Python, and Tableau</li>
-                                <li>Established quantifiable metrics to assess qualitative effectiveness of program outcomes, driving continuous improvement efforts</li>
-                                <li>Presented strategic recommendations to leadership, delivering executive summary to increase veteran enrollment</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-node"></div>
-                </div>
+            <!-- Toggle Buttons -->
+            <div class="journey-toggle">
+                <button class="toggle-btn active" onclick="showContent('experience')">Experience</button>
+                <button class="toggle-btn" onclick="showContent('education')">Education</button>
+            </div>
 
-                <!-- Deloitte Experience -->
-                <div class="timeline-entry">
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-content">
-                            <div class="timeline-org-badge deloitte">Deloitte Consulting</div>
-                            <div class="timeline-role">Business Technology Analyst</div>
-                            <div class="timeline-location-date">
-                                <span>Hyderabad, Telangana, India • Hybrid</span>
-                                <span class="timeline-date">Sep 2021 - Aug 2024</span>
+            <!-- Experience Content -->
+            <div id="experience-content" class="journey-content">
+                <div class="journey-grid">
+                    
+                    <!-- Risepoint -->
+                    <div class="journey-card">
+                        <div class="company-header">
+                            <div class="company-logo risepoint">
+                                <img src="assets/Journey Tile Icons and Images/Risepoint-logo.jpeg" alt="Risepoint" onerror="this.style.display='none'; this.parentElement.innerHTML='R';">
                             </div>
-                            <p class="timeline-description">
-                                Digital Transformation Consulting: Transitioned from electrical engineering into Salesforce ecosystem, delivering custom solutions that bridged business and technology for high-profile clients.
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li>Developed bug-free Salesforce Opportunity Trigger framework and automated sales goal assignments using Batch Apex, significantly reducing manual processes</li>
-                                <li>Spearheaded adoption of Low Code/No Code solutions, improving development efficiency and reducing time to delivery</li>
-                                <li>Mastered Salesforce administration, Apex programming, Lightning Web Components (LWC), and deployment tools (AutoRabit, Copado)</li>
-                                <li>Demonstrated strong consulting skills by working closely with stakeholders, translating complex technical concepts into business value</li>
-                                <li>Mentored junior teammates and fostered collaborative team culture</li>
-                                <li><strong>Recognition:</strong> Deloitte's Applause Award (2022), Multiple SPOT Awards (2023-2024)</li>
-                            </ul>
+                            <div class="company-info">
+                                <h3>Risepoint</h3>
+                                <div class="role">Marketing & Operations Intern</div>
+                            </div>
+                        </div>
+                        <div class="date-location">
+                            <div class="location">Boston, MA • Remote</div>
+                            <div class="date">Jun 2025 — Present</div>
+                        </div>
+                        <div class="description">
+                            Strategic consulting role gaining comprehensive exposure to strategy work at an innovative EdTech company. Conducting in-depth analysis to shape key strategic initiatives and delivering value-added recommendations to drive business growth.
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">Strategic Analysis</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">KPI Development</span>
+                            <span class="skill-tag">Process Optimization</span>
                         </div>
                     </div>
-                    <div class="timeline-node"></div>
-                </div>
 
-                <!-- Undergraduate Education -->
-                <div class="timeline-entry">
-                    <div class="timeline-content-wrapper">
-                        <div class="timeline-content">
-                            <div class="timeline-org-badge cbit">Chaitanya Bharathi Institute of Technology</div>
-                            <div class="timeline-role">Bachelor of Engineering in Electrical and Electronics</div>
-                            <div class="timeline-location-date">
-                                <span>Hyderabad, Telangana, India</span>
-                                <span class="timeline-date">Aug 2017 - Jun 2021</span>
+                    <!-- FourBlock -->
+                    <div class="journey-card">
+                        <div class="company-header">
+                            <div class="company-logo fourblock">
+                                <img src="assets/Journey Tile Icons and Images/fourblock_logo.jpeg" alt="FourBlock" onerror="this.style.display='none'; this.parentElement.innerHTML='4B';">
                             </div>
-                            <p class="timeline-description">
-                                Engineering Foundation with Leadership Experience
-                            </p>
-                            <ul class="timeline-achievements">
-                                <li>Built strong foundation in analytical thinking, problem-solving, and technical systems design</li>
-                                <li>Executive Board Member/Co-Ordinator - Chaitanya Bharathi Cultural Club (2017-2020)</li>
-                                <li>Led comprehensive event management, planning, and securing sponsorships for major festival activities</li>
-                                <li>Developed presentation skills, analytical skills, and cross-functional team coordination capabilities</li>
-                            </ul>
+                            <div class="company-info">
+                                <h3>FourBlock</h3>
+                                <div class="role">Analytics Intern</div>
+                            </div>
+                        </div>
+                        <div class="date-location">
+                            <div class="location">Boston, MA</div>
+                            <div class="date">Jan 2025 — Apr 2025</div>
+                        </div>
+                        <div class="description">
+                            Impact analytics & strategy for veteran career readiness organization. Developed master KPIs to evaluate program effectiveness and validated Salesforce alumni data to measure program impact.
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Salesforce</span>
                         </div>
                     </div>
-                    <div class="timeline-node"></div>
+
+                    <!-- Deloitte -->
+                    <div class="journey-card">
+                        <div class="award-badge">Multiple Awards</div>
+                        <div class="company-header">
+                            <div class="company-logo deloitte">
+                                <img src="assets/Journey Tile Icons and Images/Deloitte-logo.jpeg" alt="Deloitte" onerror="this.style.display='none'; this.parentElement.innerHTML='D';">
+                            </div>
+                            <div class="company-info">
+                                <h3>Deloitte Consulting</h3>
+                                <div class="role">Business Technology Analyst</div>
+                            </div>
+                        </div>
+                        <div class="date-location">
+                            <div class="location">Hyderabad, India • Hybrid</div>
+                            <div class="date">Sep 2021 — Aug 2024</div>
+                        </div>
+                        <div class="description">
+                            Digital transformation consulting delivering custom Salesforce solutions. Developed bug-free frameworks, automated processes, and mentored teams while earning multiple recognition awards including Deloitte's Applause Award.
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">Salesforce Development</span>
+                            <span class="skill-tag">Apex Programming</span>
+                            <span class="skill-tag">Lightning Web Components</span>
+                            <span class="skill-tag">AutoRabit</span>
+                            <span class="skill-tag">Copado</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Education Content -->
+            <div id="education-content" class="journey-content hidden">
+                <div class="journey-grid">
+                    
+                    <!-- Northeastern University -->
+                    <div class="journey-card">
+                        <div class="award-badge">Scholarship Awardee</div>
+                        <div class="company-header">
+                            <div class="company-logo northeastern">
+                                <img src="assets/Journey Tile Icons and Images/NEU-logo.jpeg" alt="Northeastern University" onerror="this.style.display='none'; this.parentElement.innerHTML='NU';">
+                            </div>
+                            <div class="company-info">
+                                <h3>Northeastern University</h3>
+                                <div class="role">M.S. in Business Analytics</div>
+                            </div>
+                        </div>
+                        <div class="date-location">
+                            <div class="location">Boston, MA</div>
+                            <div class="date">Aug 2024 — Dec 2025</div>
+                        </div>
+                        <div class="description">
+                            D'Amore-McKim School of Business with D'Amore-McKim Achievers Scholarship. Graduate Career Center Advisory Board Member leading strategic planning for career development initiatives.
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Statistical Modeling</span>
+                            <span class="skill-tag">Data Mining</span>
+                            <span class="skill-tag">Business Analytics Strategy</span>
+                            <span class="skill-tag">Monte Carlo Simulations</span>
+                        </div>
+                    </div>
+
+                    <!-- CBIT -->
+                    <div class="journey-card">
+                        <div class="company-header">
+                            <div class="company-logo cbit">
+                                <img src="assets/Journey Tile Icons and Images/CBIT-logo.jpeg" alt="CBIT" onerror="this.style.display='none'; this.parentElement.innerHTML='CBIT';">
+                            </div>
+                            <div class="company-info">
+                                <h3>Chaitanya Bharathi Institute of Technology</h3>
+                                <div class="role">B.E. in Electrical and Electronics</div>
+                            </div>
+                        </div>
+                        <div class="date-location">
+                            <div class="location">Hyderabad, India</div>
+                            <div class="date">Aug 2017 — Jun 2021</div>
+                        </div>
+                        <div class="description">
+                            Engineering foundation with leadership experience. Executive Board Member of Cultural Club, leading comprehensive event management and developing analytical and presentation skills.
+                        </div>
+                        <div class="skills">
+                            <span class="skill-tag">Analytical Thinking</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Technical Systems</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Event Management</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1422,7 +1476,6 @@
                         <div class="project-tags">
                             <span class="tag">Customer Analytics</span>
                             <span class="tag">Exploratory Data Analysis</span>
-                            
                         </div>
                         <div class="project-actions">
                             <a href="https://vijayatheli1709.github.io/Retail-Analytics-Business-Insights/" class="action-btn view-analysis-btn" target="_blank">
@@ -1901,6 +1954,56 @@
     </footer>
 
     <script>
+        // Journey Toggle Functionality
+        function showContent(contentType) {
+            // Hide all content
+            document.getElementById('experience-content').classList.add('hidden');
+            document.getElementById('education-content').classList.add('hidden');
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(contentType + '-content').classList.remove('hidden');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Add hover effects for journey cards
+        document.querySelectorAll('.journey-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.03)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Skill tag hover effects
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.15)';
+                this.style.transform = 'translateY(-2px)';
+                this.style.color = '#ffffff';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.transform = 'translateY(0)';
+                this.style.color = 'rgba(255, 255, 255, 0.9)';
+            });
+        });
+
         // Add hover effects and interactions
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -1993,7 +2096,7 @@
         });
 
         // Observe elements for animation
-        document.querySelectorAll('.timeline-entry, .skill-category, .award-card').forEach(el => {
+        document.querySelectorAll('.journey-card, .skill-category, .award-card').forEach(el => {
             el.style.transform = 'translateY(30px)';
             el.style.opacity = '0';
             el.style.transition = 'all 0.8s ease';
@@ -2133,6 +2236,21 @@
                 this.style.background = 'rgba(255, 255, 255, 0.1)';
                 this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
                 this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Animate cards on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.journey-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
             });
         });
 
