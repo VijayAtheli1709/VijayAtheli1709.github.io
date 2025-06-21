@@ -2802,8 +2802,8 @@
             });
         });
 
-        // Auto-play carousel
-        let autoPlayInterval = setInterval(nextSlide, 7000);
+        // Auto-play carousel (increased to 12 seconds for better readability)
+        let autoPlayInterval = setInterval(nextSlide, 12000);
 
         // Pause auto-play on hover
         if (container) {
@@ -2812,21 +2812,32 @@
             });
 
             container.addEventListener('mouseleave', () => {
-                autoPlayInterval = setInterval(nextSlide, 7000);
+                autoPlayInterval = setInterval(nextSlide, 12000);
             });
 
             // Touch/swipe support for mobile
             let startX = 0;
+            let startY = 0;
             let isDragging = false;
 
             container.addEventListener('touchstart', (e) => {
                 startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
                 isDragging = true;
             });
 
             container.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
-                e.preventDefault();
+                
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const diffX = Math.abs(currentX - startX);
+                const diffY = Math.abs(currentY - startY);
+                
+                // Only prevent default if horizontal swipe is more significant than vertical
+                if (diffX > diffY && diffX > 10) {
+                    e.preventDefault();
+                }
             });
 
             container.addEventListener('touchend', (e) => {
@@ -2834,10 +2845,13 @@
                 isDragging = false;
                 
                 const endX = e.changedTouches[0].clientX;
-                const diff = startX - endX;
+                const endY = e.changedTouches[0].clientY;
+                const diffX = startX - endX;
+                const diffY = Math.abs(startY - endY);
                 
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
+                // Only trigger slide change if horizontal swipe is more significant
+                if (Math.abs(diffX) > 50 && Math.abs(diffX) > diffY) {
+                    if (diffX > 0) {
                         nextSlide();
                     } else {
                         prevSlide();
