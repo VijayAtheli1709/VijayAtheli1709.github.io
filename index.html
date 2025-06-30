@@ -827,6 +827,29 @@
             font-size: 0.8rem;
             font-weight: 400;
         }
+        .description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .description li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .description li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: rgba(96, 165, 250, 0.9);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+            border: 1px solid rgba(96, 165, 250, 0.6);
+        }
 
         .skills {
             display: flex;
