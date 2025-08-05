@@ -2654,28 +2654,31 @@
         });
 
         // Count-up animation for highlights
-        function animateCountUp() {
-            const highlightNumbers = document.querySelectorAll('.highlight-number');
-            
-            highlightNumbers.forEach(number => {
-                const targetCount = parseInt(number.getAttribute('data-count'));
-                const showPlus = number.getAttribute('data-show-plus') === 'true';
-                let currentCount = 0;
-                const increment = targetCount / 30; // Animation duration control
-                
-                const timer = setInterval(() => {
-                    currentCount += increment;
-                    if (currentCount >= targetCount) {
-                        number.textContent = showPlus ? targetCount + '+' : targetCount;
-                        clearInterval(timer);
-                        number.classList.add('animate');
-                    } else {
-                        number.textContent = Math.floor(currentCount);
-                    }
-                }, 50);
-            });
-        }
-
+function animateCountUp() { 
+    const highlightNumbers = document.querySelectorAll('.highlight-number'); 
+     
+    highlightNumbers.forEach(number => { 
+        const targetCount = parseFloat(number.getAttribute('data-count')); // Changed from parseInt
+        const showPlus = number.getAttribute('data-show-plus') === 'true'; 
+        let currentCount = 0; 
+        const increment = targetCount / 30; 
+         
+        const timer = setInterval(() => { 
+            currentCount += increment; 
+            if (currentCount >= targetCount) { 
+                // Handle decimal display properly
+                const displayValue = targetCount % 1 === 0 ? targetCount : targetCount.toFixed(1);
+                number.textContent = showPlus ? displayValue + '+' : displayValue; 
+                clearInterval(timer); 
+                number.classList.add('animate'); 
+            } else { 
+                // Show decimals during animation if target has decimals
+                const displayValue = targetCount % 1 === 0 ? Math.floor(currentCount) : currentCount.toFixed(1);
+                number.textContent = displayValue; 
+            } 
+        }, 50); 
+    }); 
+}
         // Trigger count-up animation when highlights section is visible
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -2938,5 +2941,6 @@
     </script>
 </body>
 </html>
+
 
 
